@@ -1,0 +1,74 @@
+#navigation {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+    height: 30px;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    /* Adds shadow to the bottom of the bar */
+    -webkit-box-shadow: 0px 0px 8px 0px #FFF;
+    -moz-box-shadow: 0px 0px 8px 0px #FFF;
+    box-shadow: 0px 0px 8px 0px #000000;
+    /* Adds the transparent background */
+    background-color: #76C9F6;
+    color: rgba(1, 1, 1, 0.3);
+    
+}
+#navigation a {
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    padding-left: 15px;
+    padding-right: 15px;
+    vertical-align: middle;
+    color: #101018;
+    text-decoration: none;
+    float: left;
+}
+
+#navigation #logo {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 1.5em;
+    padding-left: 5%;
+    padding-right: 60px;
+    color: white;
+    float: left;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 10px;
+/*For text outline
+    text-shadow:
+    -1px -1px 0 #FFFFCC,
+    1px -1px 0 #FFFFCC,
+    -1px 1px 0 #FFFFCC,
+    1px 1px 0 #FFFFCC;  
+*/
+}
+
+#navigation #logout {
+    float: right;
+    padding-right: 5%;
+}
+
+#navigation a:hover {
+    color: grey;
+} 
+
+#calendar {
+    font-family: 'Gochi Hand', cursive;
+    width: 900px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+}
+
+#calendar td{
+    width: 10%;
+    font-size: 2em;
+}
+
+@media all and (max-width: 767px) {
+  .navbar { display: none; }
+}
