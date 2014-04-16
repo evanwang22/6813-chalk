@@ -84,6 +84,41 @@ body {
     padding: 30px;
 }
 
+#tag_listing {
+    font-family: 'Muli', sans-serif;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:100px;
+}
+
+#post_photo {
+    padding-top: 60px;
+    width:600px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Muli', sans-serif;
+}
+
+#post_photo .date {
+    display: block;
+    font-family: 'Gochi Hand', cursive;
+}
+#post_text {
+    padding-top: 60px;
+    width:600px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Muli', sans-serif;
+}
+
+#post_text .date {
+    display: block;
+    font-family: 'Gochi Hand', cursive;
+}
 @media all and (max-width: 767px) {
   .navbar { display: none; }
 }
