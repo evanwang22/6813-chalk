@@ -69,6 +69,14 @@
     font-size: 2em;
 }
 
+#calendar #title {
+    font-size: 4em;
+}
+
+#calendar .label {
+    padding: 30px;
+}
+
 @media all and (max-width: 767px) {
   .navbar { display: none; }
 }
