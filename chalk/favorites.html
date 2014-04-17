@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="chalk.css" type="text/css" ?>
+    <link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Muli' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    
+    <title>chalklit</title>
+      <script>
+  $(function() {
+    var post_title = $( "#post_title" ),
+      post_content = $( "#post_content" ),
+      tips = $( ".validateTips" );
+ 
+    $( "#dialog-form" ).dialog({
+      autoOpen: false,
+      height: 700,
+      width: 600,
+      modal: true,
+      dialogClass: 'posting-dialog',
+      buttons: {
+        "Publish": function() {
+            $( this ).dialog( "close" );
+        },
+        Cancel: function() {
+          $( this ).dialog( "close" );
+        }
+      },
+      close: function() {
+      }
+    }).dialog('widget').position({ my: 'center top', at: 'center top', of: window});
+ 
+    $( "#new-post" )
+      .button()
+      .click(function() {
+        $( "#dialog-form" ).dialog( "open" );
+      });
+  });
+
+  $(document).ready(function(){
+    $('.date').after("<img class='star' src='assets/star_yellow.png' width='25' height='25'>");
+  });
+  </script>
+    </head>
+<body>
+    <div id="navigation" class="navbar">
+        <a href="#" id="logo">Chalklit</a>
+        <a href="chalk.html">Home</a>
+        <a href="calendar_yearview.html">Calendar</a>
+        <a href="#profile">Profile</a>
+        <a href ="favorites.html">Favorites</a>
+        <button id="new-post">Create New Post!</button>
+        <a href="#" id="logout">Logout</a>
+    </div>
+
+    <div id="post_photo">
+    <span class="date">April 14, 2014</span>
+    <img id="photo" src="assets/rowofflowers.jpg" alt="Paper Flower Crafts">
+          The kids made some lovely craft paper flowers for the classroom today.
+    </div>
+  
+        <div id="dialog-form" top=10px title="New Post">
+    <form>
+    <fieldset>
+        <label id = "post_title_word" for="Title">Title</label>
+        <input type="text" name="Title" id="new_post_title">
+        <label id = "content_title_word" for="Content">Content</label>
+        <textarea id = "new_post_content" name= "Content" rows="4" cols="50">
+        </textarea>
+<!--         <input type="textarea" name="Content" id="new_post_content"> -->
+    </fieldset>
+    </form>
+    </div>
+</body>   
+</html>
+
+
