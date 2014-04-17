@@ -147,19 +147,18 @@ fieldset {
     width: 90%;
 }
 
-.post_title_word{
-	font-family: "Muli", sans-serif;
-} 
-.content_title_word{
+.inside_form_text{
 	font-family: "Muli", sans-serif;	
 }
 
 #new_post_content {
-    width: 538px;
-    height: 421px;
+    width: 535px;
+    height: 370px;
 }
 
-
+#tags_inside_form{
+	width: 100%;
+}
 .ui-dialog.posting-dialog {
     position: relative;
     width: 800px;
