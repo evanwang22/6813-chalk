@@ -147,8 +147,16 @@ fieldset {
     width: 90%;
 }
 
+.post_title_word{
+	font-family: "Muli", sans-serif;
+} 
+.content_title_word{
+	font-family: "Muli", sans-serif;	
+}
+
 #new_post_content {
-    width: 90%;
+    width: 538px;
+    height: 421px;
 }
 
 
