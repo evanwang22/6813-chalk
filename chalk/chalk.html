@@ -6,6 +6,9 @@
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link href="css/jquery.tagit.css" rel="stylesheet" type="text/css">
+    <script src="js/tag-it.js" type="text/javascript" charset="utf-8"></script>
+    
     
     <title>chalklit</title>
       <script>
@@ -37,7 +40,12 @@
       .click(function() {
         $( "#dialog-form" ).dialog( "open" );
       });
-  });
+          
+        $('#readOnlyTags').tagit({
+            readOnly: true
+        });
+    });
+    
   </script>
     </head>
 <body>
@@ -51,10 +59,14 @@
     </div>
 
     <div id="post_photo">
-    <span class="date">April 14, 2014</span>
-    <img id="photo" src="assets/rowofflowers.jpg" alt="Paper Flower Crafts">
-          The kids made some lovely craft paper flowers for the classroom today.
+        <span class="date">April 14, 2014</span>
+        <img id="photo" src="assets/rowofflowers.jpg" alt="Paper Flower Crafts">
+        The kids made some lovely craft paper flowers for the classroom today.
+        <ul id="readOnlyTags">
+            <li>Art</li>
+        </ul>
     </div>
+    
     <div id="post_text">
         <span class="date">April 11, 2014</span>
         Today, we simulated the behavior of bees in a hive. We took turns being worker bees,
