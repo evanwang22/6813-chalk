@@ -131,8 +131,42 @@ body {
     display: block;
     font-family: 'Gochi Hand', cursive;
 }
+
 @media all and (max-width: 767px) {
   .navbar { display: none; }
+}
+
+fieldset {
+    width: 90%;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#new_post_title {
+    width: 90%;
+}
+
+#new_post_content {
+    width: 90%;
+}
+
+
+.ui-dialog.posting-dialog {
+    position: relative;
+    width: 500px;
+    font-family: "Muli", sans-serif;
+}
+
+.dialog-form {
+}
+.ui-dialog-titlebar {
+    font-family: "Muli", sans-serif;
+    font-size: 2em;
+    background: white;
+}
+form {
+    width: 500px;
 }
 
 .ui-dialog .ui-state-error { padding: .3em; }
