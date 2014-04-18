@@ -47,7 +47,7 @@
     });
 
   $(document).ready(function(){
-    $('.date').append("<img class='star' src='assets/star_blank.png' width='25' height='25'>");
+    $('.date').append("<img class='star' src='assets/star_blank.png' width='25' height='25' style='position:relative;top:7px;'>");
     $('.star').click(function(){
       if ($(this).hasClass('favorite')){
         $(this).attr("src", "assets/star_blank.png").attr("class", "star");
