@@ -1,0 +1,301 @@
+body {
+    margin: 0px;
+}
+
+#navigation {
+    z-index:1;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+    height: 30px;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    /* Adds shadow to the bottom of the bar */
+    -webkit-box-shadow: 0px 0px 8px 0px #FFF;
+    -moz-box-shadow: 0px 0px 8px 0px #FFF;
+    box-shadow: 0px 0px 8px 0px #000000;
+    /* Adds the transparent background */
+    background-color: #A4E3CC;
+    color: rgba(1, 1, 1, 0.3);
+    
+}
+#navigation a {
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    padding-left: 15px;
+    padding-right: 15px;
+    vertical-align: middle;
+    color: #101018;
+    text-decoration: none;
+    float: left;
+}
+
+#navigation #logo {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 1.5em;
+    padding-left: 5%;
+    padding-right: 60px;
+    color: white;
+    float: left;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 10px;
+/*For text outline
+    text-shadow:
+    -1px -1px 0 #FFFFCC,
+    1px -1px 0 #FFFFCC,
+    -1px 1px 0 #FFFFCC,
+    1px 1px 0 #FFFFCC;  
+*/
+}
+
+#navigation #logout {
+    float: right;
+    padding-right: 5%;
+}
+
+#navigation a:hover {
+    color: grey;
+} 
+
+#navigation button {
+    font-family: "Muli", sans-serif;
+    font-size: 0.5em;
+    text-align: center;
+    height: 20px;
+    vertical-align: middle;
+    float: left;
+    margin-top: 0px;
+    margin-left: 20px;
+    background: transparent;
+    padding: 0px;
+}
+#calendar {
+    font-family: 'Gochi Hand', cursive;
+    width: 900px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+}
+
+#calendar td{
+    width: 10%;
+    font-size: 2em;
+}
+
+#calendar #title {
+    font-size: 4em;
+}
+
+#calendar .label {
+    padding: 30px;
+}
+
+#tag_listing {
+    font-family: 'Muli', sans-serif;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top:100px;
+}
+
+#post_photo {
+    padding-top: 60px;
+    width:600px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Muli', sans-serif;
+}
+
+#post_photo .date {
+    display: block;
+    font-family: 'Gochi Hand', cursive;
+}
+#post_text {
+    padding-top: 60px;
+    width:600px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Muli', sans-serif;
+}
+
+#post_text .date {
+    display: block;
+    font-family: 'Gochi Hand', cursive;
+}
+
+@media all and (max-width: 767px) {
+  .navbar { display: none; }
+}
+
+fieldset {
+    width: 90%;
+    height: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#new_post_title {
+    width: 90%;
+    height: 15px;
+    float: right;
+}
+
+.inside_form_text{
+	font-family: "Muli", sans-serif;	
+}
+
+#new_post_content {
+    width: 535px;
+    height: 370px;
+}
+
+#tags_inside_form{
+	width: 100%;
+}
+
+
+.overlay{
+
+width: 100%;
+
+height: 100%;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+z-index: 1000;
+
+display: none;
+
+}
+
+.modal{
+
+display: none;
+
+background:#eee;
+
+padding:0 20px 20px;
+
+overflow:auto;
+
+z-index:1001;
+
+position:absolute;
+
+width: 500px;
+
+min-height: 300px;
+
+}
+
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+/* \\\\\\\\\\\\\\\\\    DEMO CODE   ///////////////////////////////// */
+applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, caption, img, header, section {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+.centerUp {
+  margin: 0 auto;
+  width: 960px;
+}
+
+
+.modal p {
+  font-size: 14px;
+  text-align: left;
+  margin: 10px 0 0;
+}
+.modal p:hover {
+  cursor: pointer;
+}
+
+
+
+/* \\\\\\\\\\\\\\\\\    END DEMO CODE   ///////////////////////////////// */
+/* \\\\\\\\\\\\\\\\\    MODAL CODE   ///////////////////////////////// */
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.modal {
+  display: none;
+  background: #eee;
+  padding: 0 20px 20px;
+  overflow: auto;
+  z-index: 1001;
+  position: absolute;
+  width: 500px;
+  min-height: 300px;
+}
+
+/* \\\\\\\\\\\\\\\\\    END MODAL CODE   ///////////////////////////////// */
+
+
+<!-- FORM -->
+
+.form-wrapper-01 {
+  margin: 0;
+  padding: 10px 0;
+}
+.form-wrapper-01 .inputbox {
+  border: 1px solid #eaedf2;
+  border-radius:3px;
+  height: 20px;
+  padding: 10px 0 10px 32px;
+  width: 100%;
+  outline:none;
+  margin-bottom:10px;
+  font-family: inherit;
+}
+.form-wrapper-01 .inputbox {
+  width:88%;
+}
+.form-wrapper-01 .name {
+  background:#eaedf2 url(img/user.png) 10px 13px no-repeat;
+}
+.form-wrapper-01 .email {
+  background:#eaedf2 url(img/email.png) 10px 15px no-repeat;
+}
+.form-wrapper-01 .password {
+  background:#eaedf2 url(img/password.png) 10px 10px no-repeat;
+}
+.form-wrapper-01 a.button {
+  background: none repeat scroll 0 0 #14B9D5;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+.form-wrapper-01 .button:hover {
+  background:#0e778a;
+}
+.form-wrapper-01 a.button > i {
+  font-size:20px;
+}

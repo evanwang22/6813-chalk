@@ -1,80 +1,3 @@
-body {
-    margin: 0px;
-}
-
-#navigation {
-    z-index:1;
-    margin: 0px;
-    padding: 0px;
-    float: left;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    color: #ffffff;
-    height: 30px;
-    text-align: left;
-    padding-top: 15px;
-    padding-bottom: 5px;
-    /* Adds shadow to the bottom of the bar */
-    -webkit-box-shadow: 0px 0px 8px 0px #FFF;
-    -moz-box-shadow: 0px 0px 8px 0px #FFF;
-    box-shadow: 0px 0px 8px 0px #000000;
-    /* Adds the transparent background */
-    background-color: #76C9F6;
-    color: rgba(1, 1, 1, 0.3);
-    
-}
-#navigation a {
-    font-family: 'Muli', sans-serif;
-    font-size: 1em;
-    padding-left: 15px;
-    padding-right: 15px;
-    vertical-align: middle;
-    color: #101018;
-    text-decoration: none;
-    float: left;
-}
-
-#navigation #logo {
-    font-family: 'Gochi Hand', cursive;
-    font-size: 1.5em;
-    padding-left: 5%;
-    padding-right: 60px;
-    color: white;
-    float: left;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 10px;
-/*For text outline
-    text-shadow:
-    -1px -1px 0 #FFFFCC,
-    1px -1px 0 #FFFFCC,
-    -1px 1px 0 #FFFFCC,
-    1px 1px 0 #FFFFCC;  
-*/
-}
-
-#navigation #logout {
-    float: right;
-    padding-right: 5%;
-}
-
-#navigation a:hover {
-    color: grey;
-} 
-
-#navigation button {
-    font-family: "Muli", sans-serif;
-    font-size: 0.5em;
-    text-align: center;
-    height: 20px;
-    vertical-align: middle;
-    float: left;
-    margin-top: 0px;
-    margin-left: 20px;
-    background: transparent;
-    padding: 0px;
-}
 #calendar {
     font-family: 'Gochi Hand', cursive;
     width: 900px;
@@ -146,6 +69,8 @@ fieldset {
 
 #new_post_title {
     width: 90%;
+    height: 15px;
+    float: right;
 }
 
 .inside_form_text{
@@ -160,6 +85,7 @@ fieldset {
 #tags_inside_form{
 	width: 100%;
 }
+/*
 .ui-dialog.posting-dialog {
     position: relative;
     width: 800px;
@@ -179,3 +105,69 @@ form {
 
 .ui-dialog .ui-state-error { padding: .3em; }
     .validateTips { border: 1px solid transparent; padding: 0.3em; }
+*/
+
+
+.dialog-form {
+  background:#000;
+  border-radius: 4px;
+  padding:30px;
+  text-align:center;
+  float:left;
+  margin:5em 40em;
+}
+.dialog-form {
+  width:350px;
+}
+
+.form-wrapper-01 {
+  margin: 0;
+  padding: 10px 0;
+}
+.form-wrapper-01 .inputbox {
+  border: 1px solid #eaedf2;
+  border-radius:3px;
+  height: 20px;
+  padding: 10px 0 10px 32px;
+  width: 44%;
+  outline:none;
+  margin-bottom:10px;
+  font-family: inherit;
+}
+
+.login-form .form-wrapper-01 .inputbox {
+  width:88%;
+}
+.form-wrapper-01 .name {
+  background:#eaedf2 url(img/user.png) 10px 13px no-repeat;
+}
+.form-wrapper-01 .email {
+  background:#eaedf2 url(img/email.png) 10px 15px no-repeat;
+}
+.form-wrapper-01 .password {
+  background:#eaedf2 url(img/password.png) 10px 10px no-repeat;
+}
+.form-wrapper-01 a.button {
+  background: none repeat scroll 0 0 #14B9D5;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+.form-wrapper-01 .button:hover {
+  background:#0e778a;
+}
+.form-wrapper-01 a.button > i {
+  font-size:20px;
+}
+
+#mask {
+  position:absolute;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}

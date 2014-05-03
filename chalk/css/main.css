@@ -1,0 +1,210 @@
+@import url(http://fonts.googleapis.com/css?family=Gochi+Hand|Muli');
+/* \\\\\\\\\\\\\\\\\    DEMO CODE   ///////////////////////////////// */
+applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, caption, img, header, section {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+.centerUp {
+  margin: 0 auto;
+  width: 960px;
+}
+
+body {
+  background: #fafafa;
+  font-size: 13px;
+  font-family: 'Muli', sans-serif;
+  text-align: center;
+  color: #3a6a7e;
+}
+
+h1 {
+  font-size: 80px;
+  margin: 80px 0 100px;
+}
+
+h2 {
+  margin: 10px;
+  font-size: 1em;
+  color: #eb5a3d;
+}
+
+p {
+  font-size: 20px;
+}
+
+.modal p {
+    font-size: 14px;
+    width: 10%;
+    margin: 10px 0 0;
+}
+
+.modal p .button {
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0 0;
+    width: 30px;
+}
+
+.modal .closeBtn {
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 0 0;
+    width: 30px;
+}
+.modal p:hover {
+  cursor: pointer;
+}
+
+/*
+a {
+  display: block;
+  width: 280px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  padding: 30px 0 0;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  background: #eb5a3d;
+  -webkit-box-shadow: inset 0 1px 1px #ffbfb3, 0 2px 5px #732e20;
+  -moz-box-shadow: inset 0 1px 1px #ffbfb3, 0 2px 5px #732e20;
+  box-shadow: inset 0 1px 1px #ffbfb3, 0 2px 5px #732e20;
+  border: 1px solid #884335;
+}
+*/
+a:hover {
+  background: #ebc578;
+}
+
+/* \\\\\\\\\\\\\\\\\    END DEMO CODE   ///////////////////////////////// */
+/* \\\\\\\\\\\\\\\\\    MODAL CODE   ///////////////////////////////// */
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  background-color: rgb(189,217,210)
+}
+
+.modal {
+  display: none;
+  background: #fff;
+  padding: 0 10px 10px;
+  overflow: auto;
+  z-index: 1001;
+  position: absolute;
+  width: 500px;
+  min-height: 300px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* \\\\\\\\\\\\\\\\\    END MODAL CODE   ///////////////////////////////// */
+
+#navigation {
+    z-index:1;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: #ffffff;
+    height: 20px;
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    /* Adds shadow to the bottom of the bar */
+    -webkit-box-shadow: 0px 0px 8px 0px #FFF;
+    -moz-box-shadow: 0px 0px 8px 0px #FFF;
+    box-shadow: 0px 0px 5px 0px #2E4E46;
+    /* Adds the transparent background */
+    background-color: #A4E3CC;
+    color: rgba(1, 1, 1, 0.3);
+    
+}
+#navigation a {
+    font-family: 'Muli', sans-serif;
+    font-size: 1em;
+    padding-left: 18px;
+    padding-right: 18px;
+    vertical-align: middle;
+    color: #101018;
+    text-decoration: none;
+    float: left;
+}
+
+#navigation a:hover {
+    color: grey;
+} 
+
+#navigation #logo {
+    font-family: 'Gochi Hand', cursive;
+    font-size: 1.5em;
+    margin-left: 5%;
+    margin-right: 60px;
+    color: white;
+    float: left;
+/*For text outline
+    text-shadow:
+    -1px -1px 0 #FFFFCC,
+    1px -1px 0 #FFFFCC,
+    -1px 1px 0 #FFFFCC,
+    1px 1px 0 #FFFFCC;  
+*/
+}
+
+#navigation #logo:hover {
+    background: transparent;
+    color: grey;
+}
+
+#navigation #logout {
+    float: right;
+    padding-right: 5%;
+}
+
+#navigation button {
+    font-family: "Muli", sans-serif;
+    font-size: 0.5em;
+    text-align: center;
+    height: 20px;
+    vertical-align: middle;
+    float: left;
+    margin-top: 0px;
+    margin-left: 20px;
+    background: transparent;
+    padding: 0px;
+}
+
+.post {
+    margin-top: 60px;
+    padding: 20px 10px 10px;
+    width:600px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Muli', sans-serif;
+    border: 1px;
+    border-style: solid;
+    border-color: #eee;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.post .date {
+    display: block;
+    font-family: 'Gochi Hand', cursive;
+}
+
+        #sidebar ul { background: padding: 10px; list-style-type:none; }
+        #sidebar { background: #eee; opacity: 0.7; height: 100%; width: 190px; position: fixed; right: 10px; top: 0px; padding-top: 90px;margin: 0 0 0 0px; }
+
+
