@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <!--[if IE 7]>         <html class="ie7"> <![endif]-->
 <!--[if IE 8]>         <html class="ie8"> <![endif]--> 
@@ -24,11 +26,15 @@
     
     	<style type="text/css">
 
+        #sidebar ul { background: padding: 10px; list-style-type:none; }
+        #sidebar { background: #eee; opacity: 0.7; height: 100%; width: 190px; position: fixed; right: 10px; top: 0px; padding-top: 90px;margin: 0 0 0 0px; }
+
     </style>
     <div id="navigation" class="navbar">
         <a href="#" id="logo">Chalklit</a>
         <a href="chalk.html"><b><u>Home</u></b></a>
         <a href="calendar_yearview.html">Calendar</a>
+        <a href="#profile">Profile</a>
         <a href ="favorites.html">Favorites</a>
         <a class="modalLink" href="#modal1">+ New Post</a>
         <a href="landing.html" id="logout">Logout</a>
@@ -42,41 +48,10 @@
         <p class="closeBtn">x</p>
         <h2>New Post</h2>
               <form class="form-wrapper-01">
-              <input id="" class="inputbox email" type="text" placeholder="Title" 
-                     style="width: 90%;
-                            height: 25px;
-                            border: 2px;
-                            border-style: solid;
-                            border-color: #eee;
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            " 
-                     />
-              <textarea id="" class="inputbox content" type="content"
-                     style="width: 90%;
-                            height: 200px;
-                            border: 2px;
-                            border-style: solid;
-                            border-color: #eee;
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            resize: none
-                            "/></textarea>
+              <input id="" class="inputbox email" type="text" placeholder="Title"/>
+              <textarea id="" class="inputbox content" type="content"/></textarea>
         </form>
-            <form action="/file-upload" class="dropzone" id="photo-dropzone"
-                  
-                     style="display: block;
-                            width:90%;
-                            height: 40px;
-                            border:2px;
-                            border-style: solid;
-                            border-color: #eee;
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            margin-left: 13px;
-                            font-size: 0.7em;
-                            color: #223;
-                            background: #fee">
+            <form action="/file-upload" class="dropzone" id="photo-dropzone">
                 <div class="inputbox fallback">
                     <input name="file" type="file"/>
                 </div>
@@ -92,10 +67,11 @@
               style='position: relative;
                      float: right;
                      top: -5px;'>Delete</span>
-        <img id="photo" src="assets/rowofflowers.jpg" alt="Paper Flower Crafts">
-        The kids made some lovely craft paper flowers for the classroom today.
-        <ul id="readOnlyTags">
-            <li>Art</li>
+        <img class="photo" src="assets/reading_period.jpg" alt="Paper Flower Crafts">
+        Discussion of The Westing Game during reading period.
+        <ul class="tags">
+	       <li><a href="#">art</a></li>
+	       <li><a href="#">projects</a></li>
         </ul>
     </div>
     <div class="post">
@@ -107,6 +83,10 @@
         go out and collect nectar (popcorn in our case!) and the nurse bees feed nectar to the
         larvae. The queen bee is also pampered by the worker bees and nurse bees, and her job,
         we studied, is just to sit and lay eggs all day! All in all, it was a very busy BEE day!
+            <ul class="tags">
+	   <li><a href="#">science</a></li>
+	   <li><a href="#">games</a></li>
+    </ul>
     </div>
         <div class="post">
                     <span class="date">April 10, 2014</span>
@@ -115,23 +95,28 @@
               style='position: relative;
                      float: right;
                      top: -5px;'>Delete</span>
-    <img id="photo" src="assets/cursivepractice.jpg" alt="Paper Flower Crafts">
+    <img class="photo" src="assets/cursivepractice.jpg" alt="Paper Flower Crafts">
           Cursive writing practice!
+                        <ul class="tags">
+	   <li><a href="#">writing</a></li>
+    </ul>
     </div>
 
 	<div id="sidebar">
 				
 	  	<ul>
-		    <li><a href="#">OPTION 1</a></li>
-		    <li><a href="#">OPTION 2</a></li>
-		    <li><a href="#">OPTION 3</a></li>
+		    <li><a href="#">option1</a></li>
+		    <li><a href="#">option2</a></li>
+		    <li><a href="#">option3</a></li>
 		</ul>
 	
 	</div>
-
     <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
     <script type='text/javascript' src='js/jquery.modal.js'></script>
     <script type='text/javascript' src='js/site.js'></script>
     <script src='js/dropzone.js'></script>
+
+<div id="footer">
+</div>
 </body>
 </html>
