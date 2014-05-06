@@ -31,7 +31,7 @@ router.post('/add_post', function(req, res) {
   var body = req.body.body
   var tmp_path, target_path, image;
 
-  if (req.files){
+  if (req.files.image.originalFilename!==''){
     image = req.files.image.originalFilename;
     tmp_path = req.files.image.path;
     target_path = './public/images/' + req.files.image.originalFilename;
