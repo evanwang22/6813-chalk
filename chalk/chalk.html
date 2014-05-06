@@ -32,7 +32,7 @@
     <div id="navigation" class="navbar">
         <a href="#" id="logo">Chalklit</a>
         <a href="chalk.html"><b><u>Home</u></b></a>
-        <a href="calendar_main.html">Calendar</a>
+        <a href="calendar_yearview.html">Calendar</a>
         <a href="#profile">Profile</a>
         <a href ="favorites.html">Favorites</a>
         <a class="modalLink" href="#modal1">+ New Post</a>
@@ -43,21 +43,19 @@
 
     <div class="overlay" style></div>
 
-    <div id="modal1" class="modal">
-        <p class="closeBtn">x</p>
-        <h2>New Post</h2>
-              <form class="form-wrapper-01">
-              <input id="" class="inputbox email" type="text" placeholder="Title"/>
-              <textarea id="" class="inputbox content" type="content"/></textarea>
+<div id="modal1" class="modal">
+    <p class="closeBtn">x</p>
+    <h2>New Post</h2>
+        <form method="post" action="add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
+              id="photo-dropzone">
+          <input class="inputbox title" type="text" placeholder="Title" name="title"/>
+          <textarea id="" class="inputbox content" type="content" name="body"/></textarea>
+            <div class="inputbox fallback">
+                <input type="file" name="image"/>
+            </div>
+            <p><input id="publish-button" type="submit" value="Publish"></p>
         </form>
-            <form action="/file-upload" class="dropzone" id="photo-dropzone">
-                <div class="inputbox fallback">
-                    <input name="file" type="file"/>
-                </div>
-            </form>
-    
-            <p><a href="#" class="button">Publish</a></p>
-    </div>
+</div>
 
     <div class="post">
             <i class="fa fa-heart-o favorite" ></i><a href="#" class="dropdown-icon"><i class="fa fa-chevron-down">
