@@ -28,8 +28,7 @@ html .fc,
 .fc td,
 .fc th {
 	padding: 0;
-	vertical-align: top;
-	}
+	vertical-align: top;	}
 
 
 
@@ -107,7 +106,9 @@ html .fc,
 	
 /* Content
 ------------------------------------------------------------------------*/
-	
+
+
+
 .fc-content {
 	clear: both;
 	}
@@ -401,6 +402,7 @@ a.fc-event {
 
 table.fc-border-separate {
 	border-collapse: separate;
+	text-align: left;
 	}
 	
 .fc-border-separate th,
@@ -618,6 +620,11 @@ table.fc-border-separate {
 .fc-year-monthly-td
 {
 	border: thin #0f0f0f solid !important;
+	height: 90px;
+	text-align: center;
+/* 
+	vertical-align: middle;
+ */
 }
 .fc-year-monthly-header{
 	border: thin #f0f0f0 solid !important;

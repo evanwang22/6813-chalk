@@ -2120,42 +2120,42 @@ function BasicYearView(element, calendar, viewName) {
 			di.setFullYear(di.getFullYear(),mi,1-di.getDay());
 			if(mi%4==0 && mi > 0) s+="</tr><tr>";
 			
-			s +="<td class='fc-year-monthly-td'>";
-			s+="<table class='fc-border-separate' style='width:100%' cellspacing='0'>"+
-				"<thead>"+
-				"<tr><th colspan='7' class='fc-year-monthly-header' />"+localMonthNames[mi]+"</tr>"+
-				"<tr>";
-		for (i=0; i<colCnt; i++) {
-			s +="<th class='fc-year-month-weekly-head'>"+ localWeekNames[i]+"</th>"; // need fc- for setDayID
-		}
-		s +="</tr>" +
-			"</thead>" +
-			"<tbody>";
-		for (i=0; i<6; i++) {
-			s +="<tr class='fc-week" + i + "'>";
-			for (j=0; j<colCnt; j++) {
-				if(di.getMonth()== mi){
-					dayStr=formatDate(di, '-yyyy-MM-dd');
-				}else{
-					dayStr="";
-				}
-				s +="<td class='fc- " + contentClass + " fc-day" + dayStr + "'>" + // need fc- for setDayID
-					"<div>" +
-					(showNumbers ?
-						"<div class='fc-day-number'/>" :
-						''
-						) +
-					"<div class='fc-day-content'>" +
-					"</div>" +
-					"</div>" +
-					"</td>";
-				addDays(di, 1);	
-			}
-			s +="</tr>";
-			
-		}
-		s +="</tbody>" +
-			"</table>";
+			s +="<td class='fc-year-monthly-td'>" +localMonthNames[mi];
+			// s+="<table class='fc-border-separate' style='width:100%' cellspacing='0'>"+
+// 				"<thead>"+
+// 				"<tr><th colspan='7' class='fc-year-monthly-header' />"+localMonthNames[mi]+"</tr>"+
+// 				"<tr>";
+		// for (i=0; i<colCnt; i++) {
+// 			s +="<th class='fc-year-month-weekly-head'>"+ localWeekNames[i]+"</th>"; // need fc- for setDayID
+// 		}
+// 		s +="</tr>" +
+// 			"</thead>" +
+// 			"<tbody>";
+		// for (i=0; i<6; i++) {
+// 			s +="<tr class='fc-week" + i + "'>";
+// 			for (j=0; j<colCnt; j++) {
+// 				if(di.getMonth()== mi){
+// 					dayStr=formatDate(di, '-yyyy-MM-dd');
+// 				}else{
+// 					dayStr="";
+// 				}
+// 				s +="<td class='fc- " + contentClass + " fc-day" + dayStr + "'>" + // need fc- for setDayID
+// 					"<div>" +
+// 					(showNumbers ?
+// 						"<div class='fc-day-number'/>" :
+// 						''
+// 						) +
+// 					"<div class='fc-day-content'>" +
+// 					"</div>" +
+// 					"</div>" +
+// 					"</td>";
+// 				addDays(di, 1);	
+// 			}
+// 			s +="</tr>";
+// 			
+// 		}
+		// s +="</tbody>" +
+// 			"</table>";
 		s+="</td>";
 		}
 		s+="</tr></table>";
@@ -2177,7 +2177,8 @@ function BasicYearView(element, calendar, viewName) {
 		//markFirstLast(bodyRows); // marks first+last td's
 		//bodyRows.eq(0).addClass('fc-first'); // fc-last is done in updateCells
 		
-		//dayBind(bodyCells);
+		// var dayCells = table.find(".fc- ");
+// 		dayBind(dayCells);
 		daySegmentContainer =$("<div style='position:absolute;z-index:8;top:0;left:0'/>").appendTo(element);
 	}
 	
@@ -2266,8 +2267,8 @@ function BasicYearView(element, calendar, viewName) {
 	
 	function dayClick(ev) {
 		if (!opt('selectable')) { // if selectable, SelectionManager will worry about dayClick
-			var index = parseInt(this.className.match(/fc\-day(\d+)/)[1]); // TODO: maybe use .data
-			var date = indexDate(index);
+ 			var index = parseInt(this.className.match(/fc\-day(\d+)/)[1]); // TODO: maybe use .data
+ 			var date = indexDate(1);
 			trigger('dayClick', this, date, true, ev);
 		}
 	}
