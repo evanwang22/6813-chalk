@@ -2,8 +2,6 @@
 
 <h2>Blog feed for <%= user %></h2>
 
-<a href="blog/new_post">New post</a>
-
 <form method="post" action="follow">
   <input type="text" placeholder="Email of blogger to follow" name="email"></input>
   <input type="submit" value="Follow">
@@ -26,7 +24,7 @@
 <div id="modal1" class="modal">
     <p class="closeBtn">x</p>
     <h2>New Post</h2>
-        <form method="post" action="add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
+        <form method="post" action="blog/add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
               id="photo-dropzone">
           <input class="inputbox title" type="text" placeholder="Title" name="title"/>
           <textarea id="" class="inputbox content" type="content" name="body"/></textarea>
@@ -37,21 +35,6 @@
         </form>
 
 </div>
-
-
-<h3>New Post</h3>
-
-<form method="post" enctype="multipart/form-data" action="add_post">
-  <input type="text" placeholder="Title" name="title"></input>
-  <br>
-  <textarea placeholder="Write your new blog post here" cols="60" rows="20" id="new-post" name="body"></textarea>
-  <br>
-  <input type="file" name="image"><br>
-  <br>
-  <input type="submit" value="Submit">
-</form>
-
-
 
 <% for (var i = 0; i < posts.length; i++) { %>
 <div class="post">
@@ -65,7 +48,7 @@
     <span class="title"><%= posts[i].title %></span>
     <% if (posts[i].image) {%>
         <img class="photo" src= "<%=/images/ + posts[i].image %>" alt="Paper Flower Crafts">
-    <%}%>
+    <% } %>
     <%= posts[i].body %>
     <ul class="tags">
        <li><a href="#">art</a></li>

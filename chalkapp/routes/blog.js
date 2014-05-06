@@ -24,18 +24,20 @@ router.get('/new_post', function(req, res) {
 });
 
 router.post('/add_post', function(req, res) {
-  console.log(req.files);
+  console.log("add post called")
+  
   var db = req.db
 
   var title = req.body.title
   var body = req.body.body
   var tmp_path, target_path, image;
 
-  if (req.files.image.originalFilename!==''){
-    image = req.files.image.originalFilename;
-    tmp_path = req.files.image.path;
-    target_path = './public/images/' + req.files.image.originalFilename;
+  if (req.files.file){
+    image = req.files.file.originalFilename;
+    tmp_path = req.files.file.path;
+    target_path = './public/images/' + image;
 
+    // TODO: Clean this up -- maybe use a hash or something
     if (fs.exists(target_path, function(exists){
       if(exists){
         console.log("exists");
