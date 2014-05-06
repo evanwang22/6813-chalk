@@ -6,10 +6,17 @@ var fs = require('fs');
 router.get('/', function(req, res) {
   var db = req.db
   var collection = db.get('postcollection');
-  collection.find({},{"sort": [['_id', -1]]}, function(e, docs) {
-    res.render('blog', { 'posts': docs });
-  });
+  var connections = db.get('followers');
+  var users = [req.cookies.email]
 
+  connections.find({"follower": req.cookies.email}, function(err, docs) {
+    for (var i = 0; i < docs.length; i++) {
+      users.push(docs[i].user_email)
+    }
+    collection.find({"user_email": {$in : users}}, {"sort": [['_id', -1]]}, function(e, docs) {
+      res.render('blog', { 'posts': docs, 'user':req.cookies.email });
+    })
+  })
 });
 
 router.get('/new_post', function(req, res) {
@@ -24,11 +31,11 @@ router.post('/add_post', function(req, res) {
   var body = req.body.body
   var tmp_path, target_path, image;
 
-  if (req.files){
+  if (req.files.image.originalFilename!==''){
     image = req.files.image.originalFilename;
     tmp_path = req.files.image.path;
     target_path = './public/images/' + req.files.image.originalFilename;
-    
+
     if (fs.exists(target_path, function(exists){
       if(exists){
         console.log("exists");
@@ -46,13 +53,14 @@ router.post('/add_post', function(req, res) {
         //res.send("file uploaded to: " + target_path);
       });
     });
-  }  
+  }
 
   var collection = db.get('postcollection');
 
   collection.insert({
     "title" : title,
     "body" : body,
+    "user_email" : req.cookies.email,
     "image" : image,
     "dir_path" : "/images/" + image
   }, function (err, doc) {
