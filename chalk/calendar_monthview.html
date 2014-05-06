@@ -1,22 +1,67 @@
-<head>
-    <link rel="stylesheet" href="chalk.css" type="text/css" ?>
-    <link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Muli' rel='stylesheet' type='text/css'>
-    <title>chalklit</title>
+<!DOCTYPE html>
+<!--[if IE 7]>         <html class="ie7"> <![endif]-->
+<!--[if IE 8]>         <html class="ie8"> <![endif]--> 
+<head> 
+<meta charset=utf-8 />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Chalklit</title>
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	
+    <style type="text/css">
+    .clear {
+      zoom: 1;
+      display: block;
+    }
+    </style>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Muli' rel='stylesheet' type='text/css'>
 </head>
-
 <body>
     <div id="navigation" class="navbar">
-        <a href="chalk.html" id="logo">Chalklit</a>
-        <a href="chalk.html">Home</a>
-        <a href="#calendar"><b><u>Calendar</u></b></a>
+        <a href="#" id="logo">Chalklit</a>
+        <a href="chalk.html"><b><u>Home</u></b></a>
+        <a href="calendar_yearview.html">Calendar</a>
         <a href ="favorites.html">Favorites</a>
-        <a href="#profile">Profile</a>
-        <a href="#" id="logout">Logout</a>
+        <a class="modalLink" href="#modal1">+ New Post</a>
+        <a href="landing.html" id="logout">Logout</a>
+    </div>
+    <section class="centerUp">
+    </section>
+
+    <div class="overlay" style></div>
+
+    <div id="modal1" class="modal">
+        <p class="closeBtn">x</p>
+        <h2>New Post</h2>
+              <form class="form-wrapper-01">
+              <input id="" class="inputbox email" type="text" placeholder="Title"/>
+              <textarea id="" class="inputbox content" type="content"/></textarea>
+        </form>
+            <form action="/file-upload" class="dropzone" id="photo-dropzone">
+                <div class="inputbox fallback">
+                    <input name="file" type="file"/>
+                </div>
+            </form>
+    
+            <p><a href="#" class="button">Publish</a></p>
     </div>
 
 <div style="width:600px;position:relative;top:100px;left:350px;font-family: 'Muli', sans-serif;">
     <a href="calendar_yearview.html">2014</a> > <a href="calendar_monthview.html">April</a>
 </div>
+
+	<div id="sidebar">
+				
+	  	<ul>
+		    <li><a href="#">OPTION 1</a></li>
+		    <li><a href="#">OPTION 2</a></li>
+		    <li><a href="#">OPTION 3</a></li>
+		</ul>
+	
+	</div>
+
 <TABLE id="calendar" BORDER=0 CELLSPACING=3 CELLPADDING=3> 
 <TR>
 <TD COLSPAN="7" ALIGN=center id="title"><B>April 2014</B></TD> 
@@ -91,4 +136,10 @@
 <div id="tag_listing">Filter By Tag:        
         <a href="#">art</a>
         <a href="#">sports</a></div>
+
+    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script type='text/javascript' src='js/jquery.modal.js'></script>
+    <script type='text/javascript' src='js/site.js'></script>
+    <script src='js/dropzone.js'></script>
 </body>
+</html>

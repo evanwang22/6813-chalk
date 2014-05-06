@@ -20,7 +20,7 @@ body {
     -moz-box-shadow: 0px 0px 8px 0px #FFF;
     box-shadow: 0px 0px 8px 0px #000000;
     /* Adds the transparent background */
-    background-color: #76C9F6;
+    background-color: #A4E3CC;
     color: rgba(1, 1, 1, 0.3);
     
 }
@@ -146,6 +146,8 @@ fieldset {
 
 #new_post_title {
     width: 90%;
+    height: 15px;
+    float: right;
 }
 
 .inside_form_text{
@@ -160,22 +162,140 @@ fieldset {
 #tags_inside_form{
 	width: 100%;
 }
-.ui-dialog.posting-dialog {
-    position: relative;
-    width: 800px;
-    font-family: "Muli", sans-serif;
+
+
+.overlay{
+
+width: 100%;
+
+height: 100%;
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+z-index: 1000;
+
+display: none;
+
 }
 
-.dialog-form {
-}
-.ui-dialog-titlebar {
-    font-family: "Muli", sans-serif;
-    font-size: 2em;
-    background: white;
-}
-form {
-    width: 500px;
+.modal{
+
+display: none;
+
+background:#eee;
+
+padding:0 20px 20px;
+
+overflow:auto;
+
+z-index:1001;
+
+position:absolute;
+
+width: 500px;
+
+min-height: 300px;
+
 }
 
-.ui-dialog .ui-state-error { padding: .3em; }
-    .validateTips { border: 1px solid transparent; padding: 0.3em; }
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+/* \\\\\\\\\\\\\\\\\    DEMO CODE   ///////////////////////////////// */
+applet, object, iframe, body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, caption, img, header, section {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+}
+
+.centerUp {
+  margin: 0 auto;
+  width: 960px;
+}
+
+
+.modal p {
+  font-size: 14px;
+  text-align: left;
+  margin: 10px 0 0;
+}
+.modal p:hover {
+  cursor: pointer;
+}
+
+
+
+/* \\\\\\\\\\\\\\\\\    END DEMO CODE   ///////////////////////////////// */
+/* \\\\\\\\\\\\\\\\\    MODAL CODE   ///////////////////////////////// */
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: none;
+}
+
+.modal {
+  display: none;
+  background: #eee;
+  padding: 0 20px 20px;
+  overflow: auto;
+  z-index: 1001;
+  position: absolute;
+  width: 500px;
+  min-height: 300px;
+}
+
+/* \\\\\\\\\\\\\\\\\    END MODAL CODE   ///////////////////////////////// */
+
+
+<!-- FORM -->
+
+.form-wrapper-01 {
+  margin: 0;
+  padding: 10px 0;
+}
+.form-wrapper-01 .inputbox {
+  border: 1px solid #eaedf2;
+  border-radius:3px;
+  height: 20px;
+  padding: 10px 0 10px 32px;
+  width: 100%;
+  outline:none;
+  margin-bottom:10px;
+  font-family: inherit;
+}
+.form-wrapper-01 .inputbox {
+  width:88%;
+}
+.form-wrapper-01 .name {
+  background:#eaedf2 url(img/user.png) 10px 13px no-repeat;
+}
+.form-wrapper-01 .email {
+  background:#eaedf2 url(img/email.png) 10px 15px no-repeat;
+}
+.form-wrapper-01 .password {
+  background:#eaedf2 url(img/password.png) 10px 10px no-repeat;
+}
+.form-wrapper-01 a.button {
+  background: none repeat scroll 0 0 #14B9D5;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+.form-wrapper-01 .button:hover {
+  background:#0e778a;
+}
+.form-wrapper-01 a.button > i {
+  font-size:20px;
+}
