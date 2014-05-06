@@ -1,6 +1,11 @@
-<h2>Blog feed</h2>
+<h2>Blog feed for <%= user %></h2>
 
 <a href="blog/new_post">New post</a>
+
+<form method="post" action="follow">
+  <input type="text" placeholder="Email of blogger to follow" name="email"></input>
+  <input type="submit" value="Follow">
+</form>
 
 <% for (var i = 0; i < posts.length; i++) { %>
   <h3><%= posts[i].title %></h3>

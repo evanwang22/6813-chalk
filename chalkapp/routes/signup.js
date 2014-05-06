@@ -1,49 +1,47 @@
 var express = require('express');
 var router = express.Router();
+var bcrypt = require('bcrypt-nodejs');
 
-/* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'NodeJS Blog' });
+  res.render('signup.ejs', {message: ""});
 });
 
-router.get('/logout', function(req, res) {
-  if (req.cookies.email) {
-    res.clearCookie('email')
-    res.send("Successfully logged out")
-  } else {
-    res.send("You aren't logged in!")
-  }
-});
-
-router.post('/follow', function(req, res) {
-  var follow = req.body.email
+router.post('/', function(req, res) {
   var db = req.db
+  var email = req.body.email
+  var password = genHash(req.body.password)
+
   var users = db.get('usercollection');
-  var connections = db.get('followers');
   
-  users.findOne({"email":follow}, function(err, user) {
+  users.findOne({ "email": email }, function(err, user) {
+    
     if (err) {
-      res.send(err, 400)
+      res.send(err, 400);
       return
     }
-
+    
+    // Following user already exists
     if (user) {
-      connections.insert({
-        "user_email": follow,
-        "follower": req.cookies.email
+      res.send("username already taken", 400);
+    } else {
+      users.insert({
+        "email":email,
+        "password":password
       }, function(err, doc) {
         if (err) {
           res.send("There was a problem connecting to the database")
         } else {
+          res.cookie('email', email);
           res.redirect("/blog")
         }
       });
-    } else {
-      res.send("There is no user with that email");
     }
   });
 });
 
+function genHash(password) {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+}
 
 function isLoggedIn(req, res, next) {
 
