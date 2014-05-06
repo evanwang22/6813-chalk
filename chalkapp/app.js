@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var partials = require('express-partials');
-var connect = require('connect');
 
 var index = require('./routes/index');
 var blog = require('./routes/blog');
@@ -32,7 +31,6 @@ app.use(bodyParser());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(partials());
-app.use(flash());
 
 app.use(require('connect-multiparty')());
 

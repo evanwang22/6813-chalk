@@ -16,6 +16,7 @@
     "mongodb": "*",
     "monk": "*",
     "bcrypt-nodejs":"latest",
-    "connect-flash":"~0.1.1"
+    "connect-flash":"~0.1.1",
+    "connect-multiparty":"1.0.3"
   }
 }

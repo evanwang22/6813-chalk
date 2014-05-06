@@ -35,7 +35,7 @@ router.post('/add_post', function(req, res) {
     image = req.files.image.originalFilename;
     tmp_path = req.files.image.path;
     target_path = './public/images/' + req.files.image.originalFilename;
-    
+
     if (fs.exists(target_path, function(exists){
       if(exists){
         console.log("exists");
@@ -53,19 +53,16 @@ router.post('/add_post', function(req, res) {
         //res.send("file uploaded to: " + target_path);
       });
     });
-  }  
+  }
 
   var collection = db.get('postcollection');
 
   collection.insert({
     "title" : title,
     "body" : body,
-<<<<<<< HEAD
-    "user_email" : req.cookies.email
-=======
+    "user_email" : req.cookies.email,
     "image" : image,
     "dir_path" : "/images/" + image
->>>>>>> b063d2b0644e5748f644aebcaf6eb4058165e7ae
   }, function (err, doc) {
     if (err) {
       res.send("There was a problem connecting to the database")
