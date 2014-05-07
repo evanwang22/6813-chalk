@@ -584,6 +584,7 @@ function Calendar(element, options, eventSources,callbacks) {
 	
 	
 	function gotoDate(year, month, dateOfMonth) {
+		alert(year);
 		if (year instanceof Date) {
 			date = cloneDate(year); // provided 1 argument, a Date
 		}else{
@@ -723,7 +724,7 @@ function Header(calendar, options) {
 				var prevButton;
 				$.each(this.split(','), function(j, buttonName) {
 					if (buttonName == 'title') {
-						e.append("<span class='fc-header-title'><h2>&nbsp;</h2></span>");
+						e.append("<span class='fc-header-title'><h2 id = 'year'>&nbsp;</h2></span>");
 						if (prevButton) {
 							prevButton.addClass(tm + '-corner-right');
 						}
@@ -2177,8 +2178,8 @@ function BasicYearView(element, calendar, viewName) {
 		//markFirstLast(bodyRows); // marks first+last td's
 		//bodyRows.eq(0).addClass('fc-first'); // fc-last is done in updateCells
 		
-		// var dayCells = table.find(".fc- ");
-// 		dayBind(dayCells);
+		var dayCells = table.find(".fc-year-monthly-td");
+		dayBind(dayCells);
 		daySegmentContainer =$("<div style='position:absolute;z-index:8;top:0;left:0'/>").appendTo(element);
 	}
 	
@@ -2266,11 +2267,14 @@ function BasicYearView(element, calendar, viewName) {
 	
 	
 	function dayClick(ev) {
-		if (!opt('selectable')) { // if selectable, SelectionManager will worry about dayClick
- 			var index = parseInt(this.className.match(/fc\-day(\d+)/)[1]); // TODO: maybe use .data
- 			var date = indexDate(1);
-			trigger('dayClick', this, date, true, ev);
-		}
+		alert(document.getElementById("year").innerHTML + " " +  defaults.monthNames.indexOf(this.innerHTML), 1);
+		trigger('goToDate', this, defaults.monthNames.indexOf(this.innerHTML), true, ev);
+// 		alert(document.getElementById("year").innerHTML);
+		// if (!opt('selectable')) { // if selectable, SelectionManager will worry about dayClick
+//  			var index = parseInt(this.className.match(/fc\-day(\d+)/)[1]); // TODO: maybe use .data
+//  			var date = indexDate(1);
+// 			trigger('dayClick', this, date, true, ev);
+// 		}
 	}
 	
 	
