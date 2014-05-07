@@ -584,7 +584,6 @@ function Calendar(element, options, eventSources,callbacks) {
 	
 	
 	function gotoDate(year, month, dateOfMonth) {
-		alert(year);
 		if (year instanceof Date) {
 			date = cloneDate(year); // provided 1 argument, a Date
 		}else{
@@ -744,7 +743,7 @@ function Header(calendar, options) {
 							var icon = options.theme ? smartProperty(options.buttonIcons, buttonName) : null;
 							var text = smartProperty(options.buttonText, buttonName);
 							var button = $(
-								"<span class='fc-button fc-button-" + buttonName + " " + tm + "-state-default'>" +
+								"<span id ='button" + buttonName+ "' class='fc-button fc-button-" + buttonName + " " + tm + "-state-default'>" +
 									"<span class='fc-button-inner'>" +
 										"<span class='fc-button-content'>" +
 											(icon ?
@@ -2267,9 +2266,10 @@ function BasicYearView(element, calendar, viewName) {
 	
 	
 	function dayClick(ev) {
-		alert(document.getElementById("year").innerHTML + " " +  defaults.monthNames.indexOf(this.innerHTML), 1);
-		trigger('goToDate', this, defaults.monthNames.indexOf(this.innerHTML), true, ev);
-// 		alert(document.getElementById("year").innerHTML);
+// 		alert(document.getElementById("year").innerHTML + " " +  defaults.monthNames.indexOf(this.innerHTML), 1);
+		$('#calendar').fullCalendar('gotoDate', document.getElementById("year").innerHTML,defaults.monthNames.indexOf(this.innerHTML), 1 );
+		$('#calendar').fullCalendar('changeView', 'month');
+
 		// if (!opt('selectable')) { // if selectable, SelectionManager will worry about dayClick
 //  			var index = parseInt(this.className.match(/fc\-day(\d+)/)[1]); // TODO: maybe use .data
 //  			var date = indexDate(1);
