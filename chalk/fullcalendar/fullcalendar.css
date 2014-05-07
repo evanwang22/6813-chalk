@@ -101,7 +101,17 @@ html .fc,
 	z-index: 4;
 	}
 	
-	
+#centerMonths{
+	cursor: pointer;
+}
+
+#allDays{
+	cursor: pointer;
+}
+
+#year{
+	cursor: pointer;
+}
 	
 /* Content
 ------------------------------------------------------------------------*/

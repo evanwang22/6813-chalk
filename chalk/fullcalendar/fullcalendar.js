@@ -69,8 +69,8 @@ var defaults = {
 	dayNamesShort: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 	dayNamesShortest: ['S','M','T','W','T','F','S'],	//add by Kebin --> 3
 	buttonText: {
-		prev: '&nbsp;&#9668;&nbsp;',
-		next: '&nbsp;&#9658;&nbsp;',
+		prev: '&nbsp;<i class="fa fa-chevron-left"></i>&nbsp;',
+		next: '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;',
 		prevYear: '&nbsp;&lt;&lt;&nbsp;',
 		nextYear: '&nbsp;&gt;&gt;&nbsp;',
 		today: 'today',
@@ -745,7 +745,7 @@ function Header(calendar, options) {
 							var button = $(
 								"<span id ='button" + buttonName+ "' class='fc-button fc-button-" + buttonName + " " + tm + "-state-default'>" +
 									"<span class='fc-button-inner'>" +
-										"<span class='fc-button-content'>" +
+										"<span class='fc-button-content" + buttonName +"'>" +
 											(icon ?
 												"<span class='fc-icon-wrap'>" +
 													"<span class='ui-icon ui-icon-" + icon + "'/>" +
@@ -800,6 +800,8 @@ function Header(calendar, options) {
 				}
 			});
 		}
+
+
 		return e;
 	}
 	
@@ -2176,7 +2178,6 @@ function BasicYearView(element, calendar, viewName) {
 		//markFirstLast(head.add(head.find('tr'))); // marks first+last tr/th's
 		//markFirstLast(bodyRows); // marks first+last td's
 		//bodyRows.eq(0).addClass('fc-first'); // fc-last is done in updateCells
-		
 		var dayCells = table.find(".fc-year-monthly-td");
 		dayBind(dayCells);
 		daySegmentContainer =$("<div style='position:absolute;z-index:8;top:0;left:0'/>").appendTo(element);
@@ -2265,6 +2266,7 @@ function BasicYearView(element, calendar, viewName) {
 	}
 	
 	
+	
 	function dayClick(ev) {
 // 		alert(document.getElementById("year").innerHTML + " " +  defaults.monthNames.indexOf(this.innerHTML), 1);
 		$('#calendar').fullCalendar('gotoDate', document.getElementById("year").innerHTML,defaults.monthNames.indexOf(this.innerHTML), 1 );
@@ -2275,6 +2277,18 @@ function BasicYearView(element, calendar, viewName) {
 //  			var date = indexDate(1);
 // 			trigger('dayClick', this, date, true, ev);
 // 		}
+	}
+	
+	
+	function dayBind2(days) {
+		days.click(dayClick2).mousedown(daySelectionMousedown);
+	}
+	
+	
+	
+	function dayClick2(ev) {
+		$('#calendar').fullCalendar('changeView', 'year');
+
 	}
 	
 	
@@ -2981,7 +2995,7 @@ function BasicView(element, calendar, viewName) {
 				"<tr class='fc-week" + i + "'>";
 			for (j=0; j<colCnt; j++) {
 				s +=
-					"<td class='fc- " + contentClass + " fc-day" + (i*colCnt+j) + "'>" + // need fc- for setDayID
+					"<td id = 'allDays' class='fc- " + contentClass + " fc-day" + (i*colCnt+j) + "'>" + // need fc- for setDayID
 					"<div>" +
 					(showNumbers ?
 						"<div class='fc-day-number'/>" :
