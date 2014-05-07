@@ -34,7 +34,11 @@
 
 			],
 			dayClick: function(date, allDay, jsEvent, view) {
-				window.open('day_view.html','_self', false)
+				var monthNames= ['January','February','March','April','May','June','July','August','September','October','November','December'];
+				//clickedDate is the date that is clicked
+				var clickedDate = monthNames[date.getMonth()] + " " + date.getDate() + " " + date.getFullYear(); 
+				var myWindow = window.open('day_view.html','_self', false);
+				
 
 			}
 		});

@@ -27,8 +27,7 @@ html .fc,
 	
 .fc td,
 .fc th {
-	padding: 0;
-	vertical-align: top;	}
+	padding: 0;	}
 
 
 
@@ -622,13 +621,45 @@ table.fc-border-separate {
 	border: thin #0f0f0f solid !important;
 	height: 90px;
 	text-align: center;
-/* 
 	vertical-align: middle;
- */
+
 }
+
 .fc-year-monthly-header{
 	border: thin #f0f0f0 solid !important;
 }
 .fc-year-have-event{
 	background: #9cf;
+}
+
+.fc-sun {
+	vertical-align: top;
+}
+
+.fc-mon {
+	vertical-align: top;
+}
+
+.fc-tue {
+	vertical-align: top;
+}
+
+.fc-wed {
+	vertical-align: top;
+}
+
+.fc-thu {
+	vertical-align: top;
+}
+
+.fc-fri {
+	vertical-align: top;
+}
+
+.fc-sat {
+	vertical-align: top;
+}
+
+#calendar {
+	padding-bottom: 60px;
 }
