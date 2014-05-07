@@ -24,16 +24,15 @@
 <div id="modal1" class="modal">
     <p class="closeBtn">x</p>
     <h2>New Post</h2>
-        <form method="post" action="blog/add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
-              id="photo-dropzone">
-          <input class="inputbox title" type="text" placeholder="Title" name="title"/>
-          <textarea id="" class="inputbox content" type="content" name="body"/></textarea>
-            <div class="inputbox fallback">
-                <input type="file" name="image"/>
-            </div>
-            <p><input class="turquoise-flat-button2" type="submit" value="Publish"></p>
-        </form>
-
+    <form method="post" action="blog/add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
+          id="photo-dropzone">
+        <input class="inputbox title" type="text" placeholder="Title" name="title"/>
+        <textarea class="inputbox content" type="content" name="body"/></textarea>
+        <div class="inputbox fallback">
+            <input type="file" name="image"/>
+        </div>
+    </form>
+    <button id="publish-button" class="turquoise-flat-button2">Publish</button>
 </div>
 
 <% for (var i = 0; i < posts.length; i++) { %>
@@ -57,3 +56,23 @@
 </div>
 <% } %>
 
+<script>
+  $(function() {
+
+    var imageAdded = false;
+    var photoDZ;
+    $('.modalLink').click(function () {
+      photoDZ = Dropzone.instances[0];
+      photoDZ.on("addedfile", function(){ imageAdded = true });
+    });
+
+    $('#publish-button').click(function () {
+      if (imageAdded) {
+        photoDZ.processQueue();
+        setTimeout(function() {location.reload(true)}, 1000);
+      } else {
+        $('#photo-dropzone').submit();
+      }
+    });
+  });
+</script>
