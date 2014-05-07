@@ -196,7 +196,7 @@ p {
     border-color: #eee;
     margin: 0px 0px 20px 0px;
     color: #111;
-    font-size: 1em;
+    font-size: 18px;
     z-index: 0;
 }
 
@@ -217,21 +217,25 @@ p {
     margin-left: -12px;
 }
 
+
 .title {
     height: 25px;
-    top: -32px;
+    top: -30px;
+    font-size: 12px;
 }
-
 .content {
     height: 200px;
     resize: none;
-    top: 10px;
+    top: 120px;
+    font-size: 12px;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
 .dropzone {
     display: block;
     width: 450px;
-    height: 40px;
+    height: 150px;
     border:2px;
     border-style: solid;
     border-color: #eee;
@@ -246,7 +250,35 @@ p {
 
 .dz-message {
     position: relative;
-    top: -300px;
+    top: -230px;
+}
+
+.dz-preview {
+    position: relative;
+    top: -220px;
+}
+
+.dz-filename {
+    display: none;
+}
+
+.dz-size {
+    display: none;
+}
+.dz-progress {
+    display: none;
+}
+
+.dz-success-mark {
+    display: none;
+}
+
+.dz-error-mark {
+    display: none;
+}
+
+.dz-error-message {
+    display: none;
 }
 
 .dropdown {
@@ -286,6 +318,7 @@ background: #fee;
 }
 
 .dropdown-icon {
+        color: black;
 	float: right;
     position: absolute;
     left: 95%;
@@ -299,7 +332,15 @@ background: #fee;
 }
 
 .favorite {
-    float: left;
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    color: #ee444b;
+    font-size: 1.2em;
+}
+
+.favorite:hover:before {
+    content:"\f004";
 }
 
 /* -----------------------SIDEBAR-------------------------------------- */
@@ -406,7 +447,7 @@ background: #fee;
   width:120px;
   height: 40px;
   padding: 0;
-margin-top: 10px;
+margin-top: 250px;
   font-size: 14px;
   color: white;
   text-align: center;

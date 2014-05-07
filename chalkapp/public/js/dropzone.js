@@ -309,7 +309,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       autoQueue: true,
       addRemoveLinks: false,
       previewsContainer: null,
-      dictDefaultMessage: "Click in this box to browse files, or drag-and-drop picture files here to upload",
+      dictDefaultMessage: "Optional: Click in this box to browse files, or drag-and-drop a file here to upload a picture!",
       dictFallbackMessage: "Your browser does not support drag-and-drop file uploads.",
       dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
       dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
