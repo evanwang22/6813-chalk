@@ -2120,7 +2120,7 @@ function BasicYearView(element, calendar, viewName) {
 			di.setFullYear(di.getFullYear(),mi,1-di.getDay());
 			if(mi%4==0 && mi > 0) s+="</tr><tr>";
 			
-			s +="<td class='fc-year-monthly-td'>" +localMonthNames[mi];
+			s +="<td id = 'centerMonths' class='fc-year-monthly-td centerVertical'>" +localMonthNames[mi];
 			// s+="<table class='fc-border-separate' style='width:100%' cellspacing='0'>"+
 // 				"<thead>"+
 // 				"<tr><th colspan='7' class='fc-year-monthly-header' />"+localMonthNames[mi]+"</tr>"+
