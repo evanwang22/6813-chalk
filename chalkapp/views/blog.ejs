@@ -27,7 +27,7 @@
 
 <% for (var i = 0; i < posts.length; i++) { %>
 <div class="post">
-        <i class="fa fa-heart-o favorite" ></i><a href="#" class="dropdown-icon"><i class="fa fa-chevron-down">
+        <i class="fa fa-heart-o favorite" id="<%= posts[i]._id %>"></i><a href="#" class="dropdown-icon"><i class="fa fa-chevron-down">
         <ul class="dropdown">
             <li>Edit</li>
             <li>Delete</li>
@@ -65,4 +65,8 @@
       }
     });
   });
+    
+    $(".favorite").click(function() {
+        alert("Heart clicked!");
+    });
 </script>
