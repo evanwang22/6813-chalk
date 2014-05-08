@@ -13,6 +13,7 @@ var users = require('./routes/users');
 var signup = require('./routes/signup');
 var login = require('./routes/login');
 var calendar = require('./routes/calendar');
+var favorites = require('./routes/favorites');
 
 var fs = require('fs');
 
@@ -46,6 +47,7 @@ app.use('/blog', blog);
 app.use('/login', login);
 app.use('/signup', signup);
 app.use('/calendar', calendar);
+app.use('/favorites', favorites);
 app.use('/', index);
 
 /// catch 404 and forwarding to error handler
@@ -77,10 +79,6 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
-});
-
-app.get('/star.png', function (req, res) {
-    res.sendfile(path.resolve('/images/star.png'));
 });
 
 

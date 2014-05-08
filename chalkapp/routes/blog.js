@@ -24,6 +24,19 @@ router.get('/new_post', function(req, res) {
   res.render('blog/new_post');
 });
 
+router.post('/favorite', function(req, res){
+  var post_id = req.body.id
+  var is_fav = req.body.is_fav
+  var db = req.db;
+  var collection = db.get('postcollection');
+  collection.update(
+    {_id: post_id},
+    {
+      $set: {is_favorite: is_fav}
+    }
+  );
+});
+
 router.post('/add_post', function(req, res) {
   console.log("add post called")
   
@@ -34,9 +47,7 @@ router.post('/add_post', function(req, res) {
   var tmp_path, target_path, image;
 
   // Set moment timezone
-  moment().zone('-04:00');
-  console.log(moment().zone('-04:00'));
-  var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+  var time = moment().zone('-04:00').format('MMMM Do YYYY, h:mm:ss a');
 
   if (req.files.file){
     image = req.files.file.originalFilename;
@@ -72,6 +83,7 @@ router.post('/add_post', function(req, res) {
     "image" : image,
     "dir_path" : "/images/" + image,
     "time" : time
+    "is_favorite": false,
   }, function (err, doc) {
     if (err) {
       res.send("There was a problem connecting to the database")
