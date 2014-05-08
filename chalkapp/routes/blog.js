@@ -43,6 +43,11 @@ router.post('/add_post', function(req, res) {
 
   var title = req.body.title
   var body = req.body.body
+  var tags = req.body.tagsEntered.split(',');
+  for (var i = 0; i < tags.length; i++){
+    tags[i] = tags[i].trim();
+  }
+
   var tmp_path, target_path, image;
 
   if (req.files.file){
@@ -78,6 +83,7 @@ router.post('/add_post', function(req, res) {
     "user_email" : req.cookies.email,
     "image" : image,
     "dir_path" : "/images/" + image,
+    "tags": tags,
     "is_favorite": false,
   }, function (err, doc) {
     if (err) {
