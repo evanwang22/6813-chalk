@@ -23,6 +23,19 @@ router.get('/new_post', function(req, res) {
   res.render('blog/new_post');
 });
 
+router.post('/favorite', function(req, res){
+  var post_id = req.body.id
+  var is_fav = req.body.is_fav
+  var db = req.db;
+  var collection = db.get('postcollection');
+  collection.update(
+    {_id: post_id},
+    {
+      $set: {is_favorite: is_fav}
+    }
+  );
+});
+
 router.post('/add_post', function(req, res) {
   console.log("add post called")
   
