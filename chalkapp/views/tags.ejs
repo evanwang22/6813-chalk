@@ -25,6 +25,9 @@
 
 <div class="overlay" style></div>
 
+<div class="post">
+Filtering by tag <%= tag %>
+</div>
 <% for (var i = 0; i < posts.length; i++) { %>
 <div class="post">
         <% if (posts[i].is_favorite) { %>
@@ -52,6 +55,12 @@
       <% } %>
     </ul>
 </div>
+<% } %>
+
+<% if (posts.length === 0) { %>
+  <div class = "post">
+    no posts are tagged with <%= tag %>
+  </div>
 <% } %>
 
 <script>

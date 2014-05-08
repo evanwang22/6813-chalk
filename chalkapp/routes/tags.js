@@ -14,7 +14,7 @@ router.get('/:tag', function(req, res) {
       users.push(docs[i].user_email)
     }
     collection.find({"user_email": {$in : users}, "tags": req.params.tag}, {"sort": [['_id', -1]]}, function(e, docs) {
-      res.render('tags', { 'posts': docs, 'user':req.cookies.email });
+      res.render('tags', { 'posts': docs, 'user':req.cookies.email, 'tag':req.params.tag });
     });
   });
 });
