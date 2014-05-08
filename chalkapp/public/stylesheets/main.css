@@ -222,6 +222,7 @@ p {
     height: 25px;
     top: -30px;
     font-size: 12px;
+    border-color: #999;
 }
 .content {
     height: 200px;
@@ -230,6 +231,7 @@ p {
     font-size: 12px;
     padding-top: 4px;
     padding-bottom: 4px;
+    border-color: #999;
 }
 
 .dropzone {
@@ -318,7 +320,7 @@ background: #fee;
 }
 
 .dropdown-icon {
-        color: black;
+    color: black;
 	float: right;
     position: absolute;
     left: 95%;
@@ -341,6 +343,12 @@ background: #fee;
 
 .favorite:hover:before {
     content:"\f004";
+}
+
+.tagEntry {
+    height: 25px;
+    top: 122px;
+    font-size: 12px;
 }
 
 /* -----------------------SIDEBAR-------------------------------------- */
