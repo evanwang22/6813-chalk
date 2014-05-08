@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var moment = require('moment');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -14,7 +15,7 @@ router.get('/', function(req, res) {
       users.push(docs[i].user_email)
     }
     collection.find({"user_email": {$in : users}}, {"sort": [['_id', -1]]}, function(e, docs) {
-      res.render('blog', { 'posts': docs, 'user':req.cookies.email });
+      res.render('blog', { 'posts': docs, 'user':req.cookies.email});
     })
   })
 });
@@ -50,6 +51,9 @@ router.post('/add_post', function(req, res) {
 
   var tmp_path, target_path, image;
 
+  // Set moment timezone
+  var time = moment().zone('-04:00').format('MMMM Do YYYY, h:mm:ss a');
+
   if (req.files.file){
     image = req.files.file.originalFilename;
     tmp_path = req.files.file.path;
@@ -84,7 +88,8 @@ router.post('/add_post', function(req, res) {
     "image" : image,
     "dir_path" : "/images/" + image,
     "tags": tags,
-    "is_favorite": false,
+    "time" : time,
+    "is_favorite": false
   }, function (err, doc) {
     if (err) {
       res.send("There was a problem connecting to the database")
