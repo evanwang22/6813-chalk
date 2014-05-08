@@ -224,6 +224,7 @@ p {
     font-size: 12px;
     border-color: #999;
 }
+
 .content {
     height: 200px;
     resize: none;
@@ -232,6 +233,11 @@ p {
     padding-top: 4px;
     padding-bottom: 4px;
     border-color: #999;
+}
+
+.tagEntry {
+    height: 25px;
+    top: 122px;
 }
 
 .dropzone {
