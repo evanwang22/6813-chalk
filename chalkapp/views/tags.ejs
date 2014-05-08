@@ -1,3 +1,25 @@
+<html>
+<head>
+<link rel='stylesheet' type='text/css' href='../stylesheets/normalize.css' />
+<link rel='stylesheet' type='text/css' href='../stylesheets/main.css' />
+<link rel='stylesheet' type='text/css' href='../stylesheets/font-awesome.min.css' />
+
+<script type='text/javascript' src='../js/jquery-ui.js'></script>
+<script type='text/javascript' src='../js/jquery.modal.js'></script>
+<script type='text/javascript' src='../js/site.js'></script>
+<script type='text/javascript' src='../js/dropzone.js'></script>
+<style type='text/css'>
+
+  #calendar {
+    width: 900px;
+    margin: 0 auto;
+    }
+
+</style>
+
+</head>
+<body>
+
 <section class="centerUp">
 </section>
 
@@ -16,7 +38,7 @@
             <li>Delete</li>
         </ul>
         </i></a>
-    <span class="date"><%= posts[i].time %></span>
+    <span class="date"><%= posts[i].date %></span>
     <span class="title"><%= posts[i].title %></span>
     <% if (posts[i].image) {%>
         <img class="photo" src= "<%=/images/ + posts[i].image %>" alt="Paper Flower Crafts">
@@ -81,3 +103,5 @@
       });
     });
 </script>
+</body>
+</html>

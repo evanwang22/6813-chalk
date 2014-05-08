@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 /* GET home page. */
-router.get('/', function(req, res) {
+router.get('/:tag', function(req, res) {
   var db = req.db
   var collection = db.get('postcollection');
   var connections = db.get('followers');
@@ -13,8 +13,8 @@ router.get('/', function(req, res) {
     for (var i = 0; i < docs.length; i++) {
       users.push(docs[i].user_email)
     }
-    collection.find({"user_email": {$in : users}, "is_favorite": true}, {"sort": [['_id', -1]]}, function(e, docs) {
-      res.render('favorites', { 'posts': docs, 'user':req.cookies.email });
+    collection.find({"user_email": {$in : users}, "tags": req.params.tag}, {"sort": [['_id', -1]]}, function(e, docs) {
+      res.render('tags', { 'posts': docs, 'user':req.cookies.email });
     });
   });
 });

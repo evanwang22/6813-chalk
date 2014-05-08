@@ -14,6 +14,7 @@ var signup = require('./routes/signup');
 var login = require('./routes/login');
 var calendar = require('./routes/calendar');
 var favorites = require('./routes/favorites');
+var tags = require('./routes/tags');
 
 var fs = require('fs');
 
@@ -49,6 +50,7 @@ app.use('/signup', signup);
 app.use('/calendar', calendar);
 app.use('/favorites', favorites);
 app.use('/', index);
+app.use('/tags', tags);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

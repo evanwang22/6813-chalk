@@ -23,8 +23,11 @@
     <% } %>
     <%= posts[i].body %>
     <ul class="tags">
-       <li><a href="#">art</a></li>
-       <li><a href="#">projects</a></li>
+      <% if (posts[i].tags) { %>
+        <% for (var j = 0; j < posts[i].tags.length; j++) { %>
+         <li><a href="/tags/<%=posts[i].tags[j]%>"><%= posts[i].tags[j] %></a></li>
+        <% } %>
+      <% } %>
     </ul>
 </div>
 <% } %>
