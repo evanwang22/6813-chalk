@@ -1,0 +1,80 @@
+<section class="centerUp">
+</section>
+
+<div class="overlay" style></div>
+
+<% for (var i = 0; i < posts.length; i++) { %>
+<div class="post">
+        <% if (posts[i].is_favorite) { %>
+          <i class="fa fa-heart favorite" id="<%= posts[i]._id %>"></i>
+        <% } else { %>
+          <i class="fa fa-heart-o favorite" id="<%= posts[i]._id %>"></i>
+        <% } %>
+        <a href="#" class="dropdown-icon"><i class="fa fa-chevron-down">
+        <ul class="dropdown">
+            <li>Edit</li>
+            <li>Delete</li>
+        </ul>
+        </i></a>
+    <span class="date"><%= posts[i].date %></span>
+    <span class="title"><%= posts[i].title %></span>
+    <% if (posts[i].image) {%>
+        <img class="photo" src= "<%=/images/ + posts[i].image %>" alt="Paper Flower Crafts">
+    <% } %>
+    <%= posts[i].body %>
+    <ul class="tags">
+       <li><a href="#">art</a></li>
+       <li><a href="#">projects</a></li>
+    </ul>
+</div>
+<% } %>
+
+<script>
+  $(function() {
+
+    var imageAdded = false;
+    var photoDZ;
+    $('.modalLink').click(function () {
+      photoDZ = Dropzone.instances[0];
+      photoDZ.on("addedfile", function(){ imageAdded = true });
+    });
+
+    $('#publish-button').click(function () {
+      if (imageAdded) {
+        photoDZ.processQueue();
+        setTimeout(function() {location.reload(true)}, 1000);
+      } else {
+        $('#photo-dropzone').submit();
+      }
+    });
+  });
+    
+    $(".favorite").click(function() {
+      var is_fav;
+      if ($(this).hasClass('fa-heart-o')){
+        is_fav = true;
+        $(this).removeClass('fa-heart-o');
+        $(this).addClass('fa-heart');
+      }
+      else{
+        is_fav = false;
+        $(this).removeClass('fa-heart');
+        $(this).addClass('fa-heart-o');
+      }
+
+      var data = {}
+      data.id = $(this).attr('id');
+      data.is_fav = is_fav;
+
+      $.ajax({
+        type:'POST',
+        data: JSON.stringify(data),
+        contentType:'application/json',
+        url:'/blog/favorite',
+        success: function(data){
+          console.log('success');
+          console.log(JSON.stringify(data));
+        }
+      });
+    });
+</script>
