@@ -69,14 +69,14 @@ var defaults = {
 	dayNamesShort: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 	dayNamesShortest: ['S','M','T','W','T','F','S'],	//add by Kebin --> 3
 	buttonText: {
-		prev: '&nbsp;<i id = "leftArrow" class="fa fa-chevron-left"></i>&nbsp;',
-		next: '&nbsp;<i id = "rightArrow" class="fa fa-chevron-right"></i>&nbsp;',
+		prev: '&nbsp;<i class="fa fa-chevron-left"></i>&nbsp;',
+		next: '&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;',
 		prevYear: '&nbsp;&lt;&lt;&nbsp;',
 		nextYear: '&nbsp;&gt;&gt;&nbsp;',
-		today: 'Today',
-		year:'&nbsp;Year&nbsp; ', //add by kebin --> 4
-		month: '&nbsp;Month&nbsp; ',
-		week: ' week ',
+		today: 'today',
+		year:'year', //add by kebin --> 4
+		month: 'month',
+		week: 'week',
 		day: 'day'
 	},
 	
@@ -744,7 +744,7 @@ function Header(calendar, options) {
 							var text = smartProperty(options.buttonText, buttonName);
 							var button = $(
 								"<span id ='button" + buttonName+ "' class='fc-button fc-button-" + buttonName + " " + tm + "-state-default'>" +
-									"<span id = 'fc-button-inner-"+ position+"' class='fc-button-inner'>" +
+									"<span class='fc-button-inner'>" +
 										"<span class='fc-button-content" + buttonName +"'>" +
 											(icon ?
 												"<span class='fc-icon-wrap'>" +
@@ -807,22 +807,8 @@ function Header(calendar, options) {
 	
 	
 	function updateTitle(html) {
-		var year;
-		var month;
-		if (html.split(" ").length <2){
-			year = html;
-			element.find('h2').html(html);
-		}else{
-			year = html.split(" ")[1];
-			month = html.split(" ")[0];
-			element.find('h2').html('<a id = "yearLink" href="#" style="text-decoration:none; color:#FF0000; " >' + year+ '   </a><i class="fa fa-long-arrow-right"></i>   '+ month );
-			document.getElementById("yearLink").onclick = function(){
-				$('#calendar').fullCalendar('changeView', 'year');
-				return false;
-			}
-			
-		}
-		
+		element.find('h2')
+			.html(html);
 	}
 	
 	

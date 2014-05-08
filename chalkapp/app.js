@@ -11,6 +11,7 @@ var blog = require('./routes/blog');
 var users = require('./routes/users');
 var signup = require('./routes/signup');
 var login = require('./routes/login');
+var calendar = require('./routes/calendar');
 
 var fs = require('fs');
 
@@ -43,6 +44,7 @@ app.use('/users', users);
 app.use('/blog', blog);
 app.use('/login', login);
 app.use('/signup', signup);
+app.use('/calendar', calendar);
 app.use('/', index);
 
 /// catch 404 and forwarding to error handler
