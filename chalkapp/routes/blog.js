@@ -64,7 +64,8 @@ router.post('/add_post', function(req, res) {
     "body" : body,
     "user_email" : req.cookies.email,
     "image" : image,
-    "dir_path" : "/images/" + image
+    "dir_path" : "/images/" + image,
+    "is_favorite": false,
   }, function (err, doc) {
     if (err) {
       res.send("There was a problem connecting to the database")
