@@ -10,7 +10,8 @@
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+    <script type='text/javascript' src='js/jquery-ui.js'></script>
     <script type='text/javascript' src='js/jquery.modal.js'></script>
     <script type='text/javascript' src='js/site.js'></script>
     <script src='js/dropzone.js'></script>
@@ -23,6 +24,28 @@
 
   </head>
   <body>
+
+    <div id="navigation" class="navbar">
+        <a href="#" id="logo">Chalklit</a>
+        <a href="/blog">Home</a>
+        <a href="/calendar">Calendar</a>
+        <a href ="favorites.html">Favorites</a>
+        <a class="modalLink" href="#modal1">+ New Post</a>
+        <a href="/logout" id="logout">Logout</a>
+    </div>
+    <div id="modal1" class="modal">
+        <p class="closeBtn">x</p>
+        <h2>New Post</h2>
+        <form method="post" action="blog/add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
+              id="photo-dropzone">
+            <input class="inputbox title" type="text" placeholder="Title" name="title"/>
+            <textarea class="inputbox content" type="content" placeholder="Write your content here...!" name="body"/></textarea>
+            <div class="inputbox fallback">
+                <input type="file" name="image"/>
+            </div>
+        </form>
+        <button id="publish-button" class="turquoise-flat-button2">Publish</button>
+    </div>
     <%- body %>
   </body>
     
