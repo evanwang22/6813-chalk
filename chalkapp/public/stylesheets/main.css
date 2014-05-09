@@ -376,10 +376,10 @@ background: #fee;
     left: 20px;
     color: #ee444b;
     font-size: 1.2em;
+    cursor: pointer;
 }
 
 .favorite:hover:before {
-    content:"\f004";
 }
 
 .tagEntry {
