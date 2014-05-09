@@ -9,7 +9,8 @@
     <!-- HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+      <![endif]-->
+    <% if (typeof(notLoggedIn) == undefined) { %>
     <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
     <script type='text/javascript' src='js/jquery-ui.js'></script>
     <script type='text/javascript' src='js/jquery.modal.js'></script>
@@ -21,38 +22,38 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
     <link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Muli' rel='stylesheet' type='text/css'>
     <link href="stylesheets/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <% } %>
 
   </head>
   <body>
-
-    <div id="navigation" class="navbar">
-        <a href="#" id="logo">Chalklit</a>
-        <a href="/blog">Home</a>
-        <a href="/calendar">Calendar</a>
-        <a href ="/favorites">Favorites</a>
-        <form class="nav-searchbar" action="search">
-          <input id="nav-search" type="text" placeholder="Search posts by tag" name="search"/>
-          <input id="nav-button" type=submit value="Search"/>
-        </form>
-        <a href="/logout" id="logout">Logout</a>
-        <a class="modalLink" href="#modal1">+ New Post</a>
-    </div>
-    <div id="modal1" class="modal">
-        <p class="closeBtn">x</p>
-        <h2>New Post</h2>
-        <form method="post" action="blog/add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
-              id="photo-dropzone">
-            <input class="inputbox title" type="text" placeholder="Title" name="title"/>
-            <textarea class="inputbox content" type="content" placeholder="Write your content here...!" name="body"/></textarea>
-            <input class="inputbox tagEntry" type="text" placeholder="Optional: Enter tags separated by commas" name="tagsEntered"/>
-            <div class="inputbox fallback">
-                <input type="file" name="image"/>
-            </div>
-        </form>
-        <button id="publish-button" class="turquoise-flat-button2">Publish</button>
-    </div>
-
-    
+    <% if (typeof(notLoggedIn) == undefined) { %>
+      <div id="navigation" class="navbar">
+          <a href="#" id="logo">Chalklit</a>
+          <a href="/blog">Home</a>
+          <a href="/calendar">Calendar</a>
+          <a href ="/favorites">Favorites</a>
+          <form class="nav-searchbar" action="search">
+            <input id="nav-search" type="text" placeholder="Search posts by tag or text" name="search"/>
+            <input id="nav-button" type=submit value="Search"/>
+          </form>
+          <a href="/logout" id="logout">Logout</a>
+          <a class="modalLink" href="#modal1">+ New Post</a>
+      </div>
+      <div id="modal1" class="modal">
+          <p class="closeBtn">x</p>
+          <h2>New Post</h2>
+          <form method="post" action="blog/add_post" enctype="multipart/form-data" class="dropzone form-wrapper-01" 
+                id="photo-dropzone">
+              <input class="inputbox title" type="text" placeholder="Title" name="title"/>
+              <textarea class="inputbox content" type="content" placeholder="Write your content here...!" name="body"/></textarea>
+              <input class="inputbox tagEntry" type="text" placeholder="Optional: Enter tags separated by commas" name="tagsEntered"/>
+              <div class="inputbox fallback">
+                  <input type="file" name="image"/>
+              </div>
+          </form>
+          <button id="publish-button" class="turquoise-flat-button2">Publish</button>
+      </div>
+    <% } %>
     <%- body %>
   </body>
     
