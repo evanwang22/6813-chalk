@@ -95,7 +95,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    min-width: 860px;
+    min-width: 1024px;
     color: #ffffff;
     height: 20px;
     text-align: left;
@@ -125,6 +125,10 @@ p {
     color: grey;
 } 
 
+#navigation .modalLink {
+    float: right;
+    margin-right: 20px;
+}
 #navigation #logo {
     font-family: 'Gochi Hand', cursive;
     font-size: 1.5em;
@@ -162,6 +166,36 @@ p {
     margin-left: 20px;
     background: transparent;
     padding: 0px;
+}
+
+#nav-search {
+    margin-top: -4px;
+    margin-left: 15px;
+    float: left;
+    width: 200px;
+    padding: 2px;
+}
+
+#nav-search::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+#nav-search::-moz-placeholder {
+    color: #ccc;
+}
+
+#nav-button {
+    margin-top: -4px;
+    float: left;
+    margin-left: 2px;
+    overflow: visible;
+    height: 23px;
+    width: 72px;
+    color: black;
+    text-transform: uppercase;
+    background: #ebc578;
+    border-radius: 0 3px 3px 0;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.3);
 }
 
 .post {
