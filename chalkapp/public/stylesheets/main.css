@@ -95,7 +95,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    min-width: 860px;
+    min-width: 1024px;
     color: #ffffff;
     height: 20px;
     text-align: left;
