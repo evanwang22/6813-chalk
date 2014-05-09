@@ -33,6 +33,15 @@ router.post('/favorite', function(req, res){
   );
 });
 
+router.post('/delete', function(req, res) {
+  var post_id = req.body.id
+  var db = req.db;
+  var collection = db.get('postcollection');
+
+  collection.remove({_id:post_id});
+  res.send("done");
+});
+
 router.post('/add_post', function(req, res) {
   console.log("add post called")
   
