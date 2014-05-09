@@ -1,26 +1,69 @@
-<!doctype html>
 <html>
-<head>
-  <title>Node Authentication</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-  <style>
-    body    { padding-top:80px; }
-  </style>
+<head> 
+<meta charset=utf-8 />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Chalklit</title>
+<!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>	
+    <style type="text/css">
+    .clear {
+      zoom: 1;
+      display: block;
+    }
+    </style>
+<![endif]-->
+
+<link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Muli' rel='stylesheet' type='text/css'>
+<link href="stylesheets/landing.css" rel="stylesheet" type="text/css">    
 </head>
-<body>
-<div class="container">
 
-  <div class="jumbotron text-center">
-    <h1>Node Blog</h1>
-
-    <p>Login or Register:</p>
-
-    <a href="/login" class="btn btn-default">Login</a>
-    <a href="/signup" class="btn btn-default">Signup</a>
-  </div>
-
-</div>
+<body background="assets/landing-background.png" style="background-size: cover">
+    <div id= "login-form" style="position: absolute; 
+                                 font-family: Gochi Hand, sans-serif;
+                                 font-size: 5em;
+                                 text-align: center;
+                 top: 50%; 
+                 left: 50%; 
+                 margin-top: -240px; 
+                 margin-left: -225px; 
+                 height: 400px; 
+                 width: 450px;">
+        <span style="text-shadow:
+                    -1px -1px 0 #eff,
+                    1px -1px 0 #eff,
+                    -1px 1px 0 #eff,
+                    1px 1px 0 #eff;">Chalklit</span>
+        
+    <div style="font-size: 0.3em; margin-top: -20px;">for a happier classroom</div>
+    <div style="background-color: rgba(0, 0, 0, 0.7);
+                 font-family: Gochi Hand, cursive;
+                 font-size: 1em;
+                 color: white; 
+                 position: absolute;
+                 margin-top: 20px;
+                 height: 300px; 
+                 width: 450px; 
+                 text-align: center;
+                 padding: 30px 0px 0px;
+                 border-radius: 2px"
+    >
+        <div style="font-family: Muli; font-size: 0.18em; margin-bottom: 10px;"><b>A sharing platform for parents and teachers.</b></div>
+        <div style="font-family: Muli; font-size: 0.18em;"><b>Stay connected to your kids' schooling experience</b></div>
+        <div style="font-family: Muli; font-size: 0.18em;"><b>without disrupting your own schedule.</b></div>
+        <form class="form-wrapper-01" action="/login" method="post">
+              <div id="login-input"><input class="inputbox email" type="text" placeholder="Email" name="email" 
+                                           style="height: 40px;
+                                                  width: 60%;
+                                                  margin-top: 10%;
+                                                  padding-left: 10px"/></div>
+              <div id="login-input"><input class="inputbox password" type="password" placeholder="Password"                                                          name="password" 
+                                           style="height: 40px;
+                                                  width: 60%;
+                                                  padding-left: 10px"/></div>
+            
+            <div><button type="submit" class=turquoise-flat-button>LOGIN</button></div>
+        </form>
+    </div>
+    </div>
 </body>
 </html>
-

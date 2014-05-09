@@ -25,8 +25,8 @@
 
 <div class="overlay" style></div>
 
-<div class="post">
-Filtering by tag <%= tag %>
+<div class="alertbox">
+Filtering by tag '<%= tag %>'
 </div>
 <% for (var i = 0; i < posts.length; i++) { %>
 <div class="post">
@@ -58,8 +58,8 @@ Filtering by tag <%= tag %>
 <% } %>
 
 <% if (posts.length === 0) { %>
-  <div class = "post">
-    no posts are tagged with <%= tag %>
+  <div class = "alertbox">
+    No posts are tagged with '<%= tag %>'!
   </div>
 <% } %>
 
