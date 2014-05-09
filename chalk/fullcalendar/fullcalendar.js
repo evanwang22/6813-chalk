@@ -815,7 +815,7 @@ function Header(calendar, options) {
 		}else{
 			year = html.split(" ")[1];
 			month = html.split(" ")[0];
-			element.find('h2').html('<a id = "yearLink" href="#" style="text-decoration:none; color:#FF0000; " >' + year+ '   </a><i class="fa fa-long-arrow-right"></i>   '+ month );
+			element.find('h2').html('<a id = "yearLink" href="#" style="text-decoration:none; color:#eb5a3d; " >' + year+ '   </a><i class="fa fa-long-arrow-right"></i>   '+ month );
 			document.getElementById("yearLink").onclick = function(){
 				$('#calendar').fullCalendar('changeView', 'year');
 				return false;

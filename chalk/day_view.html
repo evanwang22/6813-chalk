@@ -1,12 +1,16 @@
 <head>
+	<link rel='stylesheet' type='text/css' href='fullcalendar/dayView.css' />
     <link href='http://fonts.googleapis.com/css?family=Gochi+Hand|Muli' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+    <link href="css/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
     
     <title>chalklit</title>
+
+    
 </head>
 <body>
     
@@ -37,32 +41,21 @@
         </form>
 </div>
     
-
-	<div id="sidebar">
-				
-	  	<ul>
-		    <li><a href="#">option1</a></li>
-		    <li><a href="#">option2</a></li>
-		    <li><a href="#">option3</a></li>
-		</ul>
-	
-	</div>
     <script type='text/javascript' src='js/jquery.modal.js'></script>
     <script type='text/javascript' src='js/site.js'></script>
     <script src='js/dropzone.js'></script>
 
+<div id = "YearMonthDay">
+	<h2 id= "day"><a id = "yearLink" href="calendar_main.html" style="text-decoration:none; color:#eb5a3d;" >Year</a><i class="fa fa-long-arrow-right"></i>
+		<a id = "monthLink" href="calendar_main.html" style="text-decoration:none; color:#eb5a3d;" >Month</a><i class="fa fa-long-arrow-right"></i>Day
+	</h2>
+
+</div>
+<div class= "post"> </div>
+
 <div id="footer">
 </div>
 </div>	
-    <div id="post_text" style="position:relative;top:80px">
-        <span id = "date" class="date">April 11, 2014</span>
-        <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' style='position:relative;left:505px;top:-25px'>Edit</span>
-        <span class='ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only' style='position:relative;left:507px;top:-25px'>Delete</span>
-        Today, we simulated the behavior of bees in a hive. We took turns being worker bees,
-        nurse bees, baby bees (larvae, a new vocab), and the queen bee! The worker bees would 
-        go out and collect nectar (popcorn in our case!) and the nurse bees feed nectar to the
-        larvae. The queen bee is also pampered by the worker bees and nurse bees, and her job,
-        we studied, is just to sit and lay eggs all day! All in all, it was a very busy BEE day!
-    </div>
+
 
 </body>
