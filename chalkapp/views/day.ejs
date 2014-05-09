@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 
+<% var year = date.slice(0, 4) %>
+<% var month = dayString.split(' ')[0] %>
+<% var day = date.slice(6, 8) %>
+
 <div class="alertbox">
-All posts from <%= date %>
+
+<h2>
+  <a href='/calendar'><%= year %></a> > <a href='/calendar' onclick="$('#centerMonths:contains(\'<%= month %>\')')"> <%= month %> </a>
+</h2>
+
+
+All posts from <%= dayString %>
 </div>
 
 <%- include blog.ejs %>
