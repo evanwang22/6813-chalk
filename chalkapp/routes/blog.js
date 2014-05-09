@@ -20,10 +20,6 @@ router.get('/', function(req, res) {
   })
 });
 
-router.get('/new_post', function(req, res) {
-  res.render('blog/new_post');
-});
-
 router.post('/favorite', function(req, res){
   var post_id = req.body.id
   var is_fav = req.body.is_fav
@@ -55,7 +51,7 @@ router.post('/add_post', function(req, res) {
   var tmp_path, target_path, image;
 
   // Set moment timezone
-  var time = moment().zone('-04:00').format('MMMM Do YYYY, h:mm:ss a');
+  var time = moment().zone('-04:00')
 
   if (req.files.file){
     image = req.files.file.originalFilename;
@@ -91,7 +87,8 @@ router.post('/add_post', function(req, res) {
     "image" : image,
     "dir_path" : "/images/" + image,
     "tags": formTags,
-    "time" : time,
+    "date" : time.format('YYYYMMDD'),
+    "timeString": time.format('MMMM Do YYYY, h:mm:ss a'),
     "is_favorite": false
   }, function (err, doc) {
     if (err) {

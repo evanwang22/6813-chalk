@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<section class="centerUp">
-</section>
-
-<div class="overlay" style></div>
 
 <% for (var i = 0; i < posts.length; i++) { %>
 <div class="post">
@@ -33,7 +29,7 @@
   </div>
 
 
-  <span class="date"><%= posts[i].time %></span>
+  <span class="date"><%= posts[i].timeString %></span>
   <span class="title"><%= posts[i].title %></span>
   <% if (posts[i].image) {%>
       <img class="photo" src= "<%=/images/ + posts[i].image %>" alt="Paper Flower Crafts">

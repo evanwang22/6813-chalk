@@ -22,7 +22,7 @@
 	
 html .fc,
 .fc table {
-	font-size: 1em;
+	font-size: 1.2em;
 	}
 	
 .fc td,
@@ -58,9 +58,15 @@ html .fc,
 	}
 	
 .fc-header-title h2 {
+	font-size: 30px;
+	font-color: #FF0000 !important;
 	margin-top: 0;
 	white-space: nowrap;
 	}
+
+#year{
+	color: #eb5a3d;
+}
 	
 .fc .fc-header-space {
 	padding-left: 10px;
@@ -109,9 +115,6 @@ html .fc,
 	cursor: pointer;
 }
 
-#year{
-	cursor: pointer;
-}
 	
 /* Content
 ------------------------------------------------------------------------*/
@@ -216,13 +219,41 @@ html .fc,
 	border-width: 100px 0 0 1px;
 	border-style: solid;
 	border-color: #fff;
-	background: #444;
 	opacity: .09;
 	filter: alpha(opacity=9);
 	}
-	
+
+#rightArrow{
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	margin-left: 5px;
+}	
+
+#leftArrow{
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 5px;
+	margin-right: 5px;
+}
+
 /* button states (determines colors)  */
+.fc-button-contenttoday{
 	
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 0.8em;
+}
+
+
+.fc-content{
+	margin-left: -5px;
+	margin-right: -5px;
+}
+
+
 .fc-state-default,
 .fc-state-default .fc-button-inner {
 	border-style: solid;
@@ -245,7 +276,7 @@ html .fc,
 .fc-state-active,
 .fc-state-active .fc-button-inner {
 	border-color: #555;
-	background: #777;
+	background: #3a6a7e;
 	color: #fff;
 	}
 	
@@ -259,7 +290,33 @@ html .fc,
 	display: none;
 	}
 	
-	
+#buttontoday{
+	margin-top: 10px;
+}
+
+.fc-button-contentyear{
+	margin-left: -1px;
+	font-size: 0.9em;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.fc-button-contentmonth{
+	margin-right: -1px;
+	font-size: 0.9em;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+#button-year{
+	margin-top: 1px;
+}
+#button-month{
+	maring-top: 1px;
+}
+#fc-button-inner-right{
+	padding-top: 3.5px;
+	padding-bottom: 3.5px;
+}
 
 /* Global Event Styles
 ------------------------------------------------------------------------*/

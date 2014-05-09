@@ -3,19 +3,17 @@
 <link rel='stylesheet' type='text/css' href='stylesheets/fullcalendar.css' />
 <link rel='stylesheet' type='text/css' href='stylesheets/fullcalendar.print.css' media='print' />
 <script type='text/javascript' src='js/fullcalendar.js'></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.6.0/moment.min.js"></script>
 <script type='text/javascript'>
 
 
 	$(document).ready(function() {
 		var date = new Date();
-		var d = date.getDate();
-		var m = date.getMonth();
-		var y = date.getFullYear();
 		
 		$('#calendar').fullCalendar({
 			
 			header: {
-				left: 'prev,next today',
+				left: 'prev,next',
 				center: 'title',
 				right: 'year,month'
 			},
@@ -25,9 +23,8 @@
 			],
 			dayClick: function(date, allDay, jsEvent, view) {
 				var monthNames= ['January','February','March','April','May','June','July','August','September','October','November','December'];
-				//clickedDate is the date that is clicked`
-				var clickedDate = monthNames[date.getMonth()] + " " + date.getDate() + " " + date.getFullYear(); 
-				var myWindow = window.open('day_view.html','_self', false);
+				var clickedDate = moment(date).format('YYYYMMDD');
+        window.location.href = '/calendar/'+clickedDate;
 				
 			}
 		});

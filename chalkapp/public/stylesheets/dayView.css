@@ -1,0 +1,23 @@
+#YearMonthDay{
+	margin-top: 100px;
+	font-size: 30px;
+	font-color: #eb5a3d;
+	
+}
+
+#yearLink{
+	padding-right: 10px;
+}
+
+#monthLink{
+	padding-right: 10px;
+	margin-left:-10px;
+}
+
+#day{
+	padding-left: 10px;
+}
+
+.fa-long-arrow-right{
+	padding-right: 10px;
+}
