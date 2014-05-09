@@ -358,7 +358,7 @@ p {
 background: #fee;
 }
 
-.dropdown-icon {
+.delete-icon {
     color: black;
 	float: right;
     position: absolute;
@@ -366,10 +366,8 @@ background: #fee;
     z-index: 2;
 }
 
-.dropdown-icon:hover ul {
-  display: block;
-  opacity: 1;
-  visibility: visible;
+.delete-icon:hover {
+  color: red;
 }
 
 .favorite {
