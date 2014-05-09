@@ -11,6 +11,52 @@
 		var date = new Date();
 		
 		$('#calendar').fullCalendar({
+
+      eventClick: function(calEvent, jsEvent, view) {
+        alert('Event: ' + calEvent.title);
+        alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+        alert('View: ' + view.name);
+      },
+
+      viewDisplay: function(view) {
+        console.log(view.title);
+        console.log(view.name);
+        // we're looking at a month now
+        if (view.name == "month") {
+          var month = view.title;
+          // array of all the days in the month
+          var days = $('.fc-day-number');
+          var dayContents = $('.fc-day-content');
+
+          var inMonth = false
+          for (var i = 0; i < days.length; i++) {
+            // The month we're interested in has either started or ended
+            if (days[i].innerHTML == "1") {
+              inMonth = !inMonth
+            }
+            if (inMonth) {
+              // Construct a date using moment
+              var thisMoment = moment(days[i].innerHTML+" "+view.title);
+              var date = thisMoment.format('YYYYMMDD');
+
+              (function(i, day) {
+                $.ajax({
+                  type:'GET',
+                  contentType:'application/json',
+                  url:'calendar/numposts/'+day,
+                  success: function(data){
+                    //posts = JSON.parse(data)
+                    console.log(data.posts.length);
+                    if (data.posts.length) {
+                      $(dayContents[i]).html(data.posts.length);
+                    }
+                  }
+                });
+              })(i, date);
+            }
+          }
+        }
+      },
 			
 			header: {
 				left: 'prev,next',
