@@ -19,7 +19,7 @@ router.get('/:day', function(req, res) {
       users.push(docs[i].user_email)
     }
     collection.find({"user_email": {$in : users}, "date": req.params.day}, {"sort": [['_id', -1]]}, function(e, docs) {
-      res.render('day', { 'posts': docs, 'user':req.cookies.email, 'date':dayString });
+      res.render('day', { 'posts': docs, 'user':req.cookies.email, 'dayString':dayString, 'date': req.params.day });
     });
   });
 });
