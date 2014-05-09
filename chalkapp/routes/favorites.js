@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
       users.push(docs[i].user_email)
     }
     collection.find({"user_email": {$in : users}, "is_favorite": true}, {"sort": [['_id', -1]]}, function(e, docs) {
-      res.render('favorites', { 'posts': docs, 'user':req.cookies.email });
+      res.render('blog', { 'posts': docs, 'user':req.cookies.email });
     });
   });
 });
