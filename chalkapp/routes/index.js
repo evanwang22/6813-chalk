@@ -3,13 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'NodeJS Blog' });
+  res.render('index', { title: 'NodeJS Blog', notLoggedIn: true });
 });
 
 router.get('/logout', function(req, res) {
   if (req.cookies.email) {
     res.clearCookie('email')
-    res.send("Successfully logged out")
+    res.redirect("/");
   } else {
     res.send("You aren't logged in!")
   }

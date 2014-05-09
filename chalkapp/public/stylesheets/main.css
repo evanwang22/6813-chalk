@@ -95,7 +95,7 @@ p {
     position: fixed;
     top: 0;
     width: 100%;
-    min-width: 860px;
+    min-width: 1024px;
     color: #ffffff;
     height: 20px;
     text-align: left;
@@ -188,14 +188,13 @@ p {
     margin-top: -4px;
     float: left;
     margin-left: 2px;
-    overflow: visible;
     height: 23px;
     width: 72px;
-    color: black;
-    text-transform: uppercase;
+    color: #101018;
     background: #ebc578;
     border-radius: 0 3px 3px 0;
     text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+    font-family: 'Muli', sans-serif;
 }
 
 .post {
@@ -408,6 +407,24 @@ background: #fee;
     top: 0px; 
     padding-top: 90px;
     margin: 0 0 0 0px; 
+}
+
+/* -----------------------TAGS-------------------------------------- */
+
+.alertbox {
+    position: relative;
+    margin-top: 60px;
+    padding: 10px;
+    width: 620px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Muli', sans-serif;
+    border: 1px;
+    border-style: dashed;
+    border-color: #666;
+    background: #ffff99;
+    color: #000;
 }
 
 /* -----------------------TAGS-------------------------------------- */

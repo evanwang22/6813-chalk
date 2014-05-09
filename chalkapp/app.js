@@ -15,6 +15,7 @@ var login = require('./routes/login');
 var calendar = require('./routes/calendar');
 var favorites = require('./routes/favorites');
 var tags = require('./routes/tags');
+var search = require('./routes/search');
 
 var fs = require('fs');
 
@@ -51,6 +52,7 @@ app.use('/calendar', calendar);
 app.use('/favorites', favorites);
 app.use('/', index);
 app.use('/tags', tags);
+app.use('/search', search);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
